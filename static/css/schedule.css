@@ -349,3 +349,82 @@
 .compass .south { grid-area: south; }
 .compass .east { grid-area: east; }
 .compass .west { grid-area: west; }
+
+/* Add these styles after your existing map-container styles */
+
+.movement-instructions {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+    font-family: 'Courier New', monospace;
+}
+
+.instruction-box {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(0, 243, 255, 0.05);
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 243, 255, 0.2);
+}
+
+.key-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.key-row {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+kbd {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2rem;
+    height: 2rem;
+    padding: 0.25rem 0.5rem;
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--neon-blue);
+    background: rgba(0, 243, 255, 0.1);
+    border: 1px solid var(--neon-blue);
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 243, 255, 0.2);
+}
+
+.instruction-text {
+    color: #808080;
+    font-size: 0.9rem;
+}
+
+/* Add hover effects */
+.instruction-box:hover {
+    border-color: var(--neon-blue);
+    box-shadow: 0 0 10px rgba(0, 243, 255, 0.1);
+}
+
+.instruction-box:hover kbd {
+    box-shadow: 0 0 8px rgba(0, 243, 255, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .movement-instructions {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .instruction-box {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+    }
+}
