@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon links -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="static/media/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/media/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/media/favicon/favicon-16x16.png">
+    <title>Schedule - Hardware Hacking Village</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YC8JWDXN1J"></script>
+    <link href="static/css/styles.css" rel="stylesheet">
+    <link href="static/css/schedule.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="static/js/scripts.js" defer></script>
+</head>
+<body>
+    <nav>
+        <div class="nav-content">
+            <a href="/" style="text-decoration: none;">
+                <div class="logo">
+                    <img src="static/media/favicon/android-chrome-512x512.png" alt="AppSec Logo" style="height: 100px; width: 100px; vertical-align: middle; margin-right: 8px;">
+                </div>
+            </a>
+            <div class="nav-links">
+                <a href="team.html">Team</a>
+                <a href="schedule.html">Schedule</a>
+                <a href="swag.html">Swag</a>
+                <a href="https://discord.gg/jNUHxbTYXP" target="_blank">
+                    <img src="static/media/discord.svg" alt="Discord"   width="24" height="24">
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <div class="grid-overlay"></div>
+        <canvas class="particles" id="particles"></canvas>
+        <div class="content">
+            <h1 class="hero-title glitch" data-text="Schedule">5CH3DUL3</h1>
+            <div class="spacer"></div>
+            <p style="color: #808080; text-align: justify;">find all the essential notifications and a detailed hour-by-hour itinerary for the village activities. Stay informed about key updates, session timings, and special events to make the most of your experience. Whether you’re planning your day or looking for last-minute changes, this page will keep you in the loop. Join us as we embark on an action-packed schedule filled with learning, collaboration, and fun!</p>
+            <div class="spacer"></div>
+            <div class="spacer"></div>
+            <!-- Make sure you have a container for the schedule -->
+            <div class="schedule-container">
+                <div class="schedule-header">
+                    <h2>Schedule</h2>
+                </div>
+                <div id="schedule-content">
+                    <!-- Schedule content will be rendered here -->
+                </div>
+            </div>
+            <div class="map-section">
+                <h1 class="hero-title glitch" data-text="VILLAGE FLOOR PLAN">V1774G3 F700R P74N</h1>
+                <p class="map-description">Discover the layout of the Hardware Hacking Village and all its unique stations, from practical labs to demos and workshops. Plan your route to experience each event highlight and make the most of your time with us!</p>
+                <div class="map-container">
+                    <div class="movement-instructions">
+                        <p>Move: <kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd> or Arrow Keys</p>
+                        <p>Interact: <kbd>E</kbd></p>
+                    </div>
+                    <div class="map">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Add particles.js library
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    Add your particles container
+    <div id="particles-js" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;"></div> -->
+
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>&copy; 2024 SAST SCA Village. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="static/js/schedule.js"></script>
+    <script src="static/js/map.js"></script>
+    <script src="/static/js/musicPlayer.js"></script>
+</body>
+</html>

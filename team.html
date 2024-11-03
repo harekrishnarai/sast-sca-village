@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon links - simplified -->
+    <link rel="icon" type="image/png" sizes="32x32" href="static/media/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/media/favicon/favicon-16x16.png">
+    
+    <title>Team - SAST SCA Village</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="static/css/team.css" rel="stylesheet">
+</head>
+<body class="bg-black text-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-black/90 backdrop-blur-md z-50 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 md:h-24">
+                <!-- Logo -->
+                <a href="/" class="flex items-center space-x-2">
+                    <img src="static/media/favicon/android-chrome-512x512.png" 
+                         alt="AppSec Logo" 
+                         class="h-12 w-12 md:h-16 md:w-16 transition-transform hover:scale-105"
+                         loading="lazy">
+                    <span class="hidden sm:block text-lg md:text-xl font-bold bg-gradient-to-r from-yellow-400 to-red-500 text-transparent bg-clip-text">
+                        SAST SCA Village
+                    </span>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="team.html" class="text-white hover:text-yellow-400 transition-colors">Team</a>
+                    <a href="schedule.html" class="text-white hover:text-yellow-400 transition-colors">Schedule</a>
+                    <a href="swag.html" class="text-white hover:text-yellow-400 transition-colors">Swag</a>
+                    <a href="https://discord.gg/jNUHxbTYXP" target="_blank" class="text-white hover:text-yellow-400">
+                        <img src="static/media/discord.svg" alt="Discord" class="w-6 h-6">
+                    </a>
+                    <button id="theme-toggle" class="text-white hover:text-yellow-400 transition-transform hover:scale-110">
+                        <i class="fas fa-sun text-xl"></i>
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="flex md:hidden">
+                    <button id="mobile-menu-button" class="text-white hover:text-yellow-400">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div class="hidden md:hidden" id="mobile-menu">
+                <div class="px-2 pt-2 pb-3 space-y-1 bg-gray-900/95 backdrop-blur-md">
+                    <a href="team.html" class="block px-3 py-2 text-white hover:text-yellow-400">Team</a>
+                    <a href="schedule.html" class="block px-3 py-2 text-white hover:text-yellow-400">Schedule</a>
+                    <a href="swag.html" class="block px-3 py-2 text-white hover:text-yellow-400">Swag</a>
+                    <a href="https://discord.gg/jNUHxbTYXP" class="block px-3 py-2 text-white hover:text-yellow-400">Discord</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="min-h-screen pt-24 pb-16 relative bg-gradient-to-b from-black to-gray-900">
+        <div class="absolute inset-0 bg-grid-pattern opacity-5"></div>
+        <canvas id="particles" class="fixed inset-0 pointer-events-none z-0"></canvas>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Hero Title -->
+            <h1 class="hero-title glitch text-4xl md:text-6xl lg:text-7xl font-bold text-center mb-8 mt-16" 
+                data-text="734M">
+                734M
+            </h1>
+            
+            <!-- Description -->
+            <p class="text-gray-400 text-center max-w-3xl mx-auto mb-16">
+                Meet our dedicated team of AppSec experts who have crafted this unique learning experience. 
+                From SAST specialists to secure coding mentors, our team brings together diverse expertise 
+                to help you master application security.
+            </p>
+
+            <!-- Team Grid -->
+            <div id="team-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-black/90 backdrop-blur-md border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 py-4">
+            <p class="text-gray-400 text-sm text-center">
+                &copy; 2024 SAST SCA Village. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script src="static/js/scripts.js"></script>
+    <script src="static/js/team.js"></script>
+</body>
+</html>
