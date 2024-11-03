@@ -1,19 +1,19 @@
 const villageData = [
-    { name: "Entrance", x: 0, y: 90, isEntrance: true, icon: "fa-door-open", description: "Starting point of your AppSec journey. Get ready to explore!" },
-    { name: "SAST Analysis", x: 25, y: 87, icon: "fa-search", description: "Master static analysis tools and techniques" },
-    { name: "Dependency Scanning", x: 0, y: 32, icon: "fa-cube", description: "Learn SCA tools and dependency management" },
-    { name: "Defensive Coding", x: 25, y: 0, icon: "fa-code", description: "Learn defensive programming practices" },
-    { name: "DevSecOps", x: 89.5, y: 32, icon: "fa-infinity", description: "Security in CI/CD pipeline" },
-    { name: "Supply Chain Security", x: 89.5, y: 50, icon: "fa-link", description: "Protect your software supply chain" },
-    { name: "Secure Code Review", x: 45, y: 87, icon: "fa-code-branch", description: "Security-focused code review" },
-    { name: "Exit", x: 0, y: 0, isExit: true, icon: "fa-door-closed", description: "You've completed your tour of the SAST SCA Village." },
-    { name: "Washroom", x: 91, y: 89.5, isRestroom: true, icon: "fa-restroom", description: "Restroom facilities for conference attendees." }
+    { name: "Entrance", x: 5, y: 90, isEntrance: true, icon: "fa-door-open", description: "Starting point of your AppSec journey. Get ready to explore!" },
+    { name: "SAST Analysis", x: 20, y: 85, icon: "fa-search", description: "Master static analysis tools and techniques" },
+    { name: "Dependency Scanning", x: 5, y: 32, icon: "fa-cube", description: "Learn SCA tools and dependency management" },
+    { name: "Defensive Coding", x: 20, y: 5, icon: "fa-code", description: "Learn defensive programming practices" },
+    { name: "DevSecOps", x: 80, y: 32, icon: "fa-infinity", description: "Security in CI/CD pipeline" },
+    { name: "Supply Chain Security", x: 80, y: 50, icon: "fa-link", description: "Protect your software supply chain" },
+    { name: "Secure Code Review", x: 40, y: 85, icon: "fa-code-branch", description: "Security-focused code review" },
+    { name: "Exit", x: 5, y: 5, isExit: true, icon: "fa-door-closed", description: "You've completed your tour of the SAST SCA Village." },
+    { name: "Washroom", x: 85, y: 85, isRestroom: true, icon: "fa-restroom", description: "Restroom facilities for conference attendees." }
 ];
 
 let player = {
     x: 45,
     y: 45,
-    speed: 5,
+    speed: 3,
     currentBooth: null
 };
 

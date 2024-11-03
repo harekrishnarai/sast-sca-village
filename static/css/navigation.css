@@ -1,0 +1,413 @@
+/* Title styling */
+.hero-title {
+    font-size: 5rem; /* Increased font size */
+    margin: 1rem 0 2rem; /* Reduced top margin from 4rem to 1rem */
+    text-align: center;
+    width: 100%;
+    white-space: nowrap;
+    background: linear-gradient(180deg, 
+        #ff0000 0%, 
+        #ff4500 50%, 
+        #ff8c00 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 
+        3px 3px 0px rgba(255, 0, 0, 0.3),
+        -3px -3px 0px rgba(255, 69, 0, 0.3);
+    font-family: 'Orbitron', sans-serif; /* If you have this font */
+    letter-spacing: 2px;
+}
+
+/* Description text container */
+.description-container {
+    width: 100%;
+    max-width: 900px; /* Wider container */
+    margin: 0 auto 2rem; /* Reduced from 4rem */
+    padding: 0 2rem;
+}
+
+.description-container p {
+    color: #808080;
+    text-align: justify;
+    line-height: 1.8; /* Increased line height */
+    font-size: 1.1rem; /* Slightly larger text */
+    opacity: 0.8; /* Slightly dimmed */
+}
+
+/* Content spacing */
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem; /* Reduced from 2rem */
+    margin-top: 20px; /* Reduced from 40px/60px */
+    min-height: calc(100vh - 130px);
+}
+
+/* Grid overlay adjustment */
+.grid-overlay {
+    opacity: 0.15; /* More subtle grid */
+}
+
+/* Map container styles */
+.map-container {
+    width: 90%;
+    max-width: 1200px;
+    height: 600px;
+    margin: 2rem auto;
+    border: 2px solid rgba(255, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.map-container:hover {
+    border: 2px solid var(--neon-blue);
+}
+
+.map {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border: 1px solid rgba(255, 255, 0, 0.2);
+    border-radius: 8px;
+}
+
+/* Booth styles */
+.booth {
+    position: absolute;
+    width: 80px;
+    height: 50px;
+    border: 2px solid var(--neon-blue);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 11px;
+    color: #fff;
+    background-color: rgba(0, 243, 255, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.booth:hover {
+    transform: scale(1.1);
+    background-color: rgba(255, 105, 180, 0.127);
+    color: var(--neon-blue);
+    border-color: var(--neon-pink);
+    z-index: 10;
+}
+
+/* Entrance and Exit styles */
+.entrance, .exit {
+    width: 80px; /* Reduced from 100px */
+    height: 50px; /* Reduced from 60px */
+    background-color: rgba(255, 255, 0, 0.1);
+    border-color: var(--neon-pink);
+}
+
+.entrance .label, .exit .label {
+    font-size: 12px;
+}
+
+/* Path styles */
+.path {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.path-line {
+    fill: none;
+    stroke: var(--neon-pink);
+    stroke-width: 2;
+    stroke-dasharray: 10, 5;
+    animation: dashAnimation 30s linear infinite;
+}
+
+/* Player styles */
+#player {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: var(--neon-blue);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    transition: all 0.3s ease;
+}
+
+.player-container {
+    position: relative;
+    display: inline-block;
+}
+
+/* Direction arrows */
+.direction-arrow {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-color: rgba(255, 255, 0, 0.6);
+    border-style: solid;
+    border-width: 0;
+    animation: pulse 1s infinite ease-in-out;
+}
+
+/* Arrow positions */
+.arrow-up {
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    border-top: 2px solid;
+    border-left: 2px solid;
+}
+
+.arrow-down {
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-135deg);
+    border-top: 2px solid;
+    border-left: 2px solid;
+}
+
+.arrow-left {
+    left: -15px;
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+    border-top: 2px solid;
+    border-left: 2px solid;
+}
+
+.arrow-right {
+    right: -15px;
+    top: 50%;
+    transform: translateY(-50%) rotate(135deg);
+    border-top: 2px solid;
+    border-left: 2px solid;
+}
+
+/* Compass styling */
+.compass {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid #ff0000;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    margin-right: 10px;
+}
+
+/* Direction container */
+.compass-directions {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Common styles for direction indicators */
+.compass span {
+    position: absolute;
+    color: #ff0000;
+    font-size: 12px;
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+}
+
+/* Position each direction */
+.compass .north {
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.compass .south {
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.compass .east {
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.compass .west {
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Add inner circle */
+.compass::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(255, 0, 0, 0.3);
+    border-radius: 50%;
+}
+
+/* Hover effect */
+.compass span:hover {
+    color: #ff4444;
+    text-shadow: 0 0 8px rgba(255, 0, 0, 0.8);
+}
+
+/* Animations */
+@keyframes dashAnimation {
+    to {
+        stroke-dashoffset: -100;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0% { opacity: 0.4; }
+    50% { opacity: 1; }
+    100% { opacity: 0.4; }
+}
+
+/* Booth tooltip */
+.booth-tooltip {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.9);
+    color: var(--neon-blue);
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--neon-blue);
+    display: none;
+    z-index: 1000;
+    width: 200px;
+    pointer-events: none;
+}
+
+.booth:hover .booth-tooltip {
+    display: block;
+}
+
+/* Challenge modal */
+.challenge-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.95);
+    border: 2px solid var(--neon-blue);
+    border-radius: 10px;
+    padding: 20px;
+    z-index: 2000;
+    max-width: 800px;
+    width: 90%;
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.close-modal {
+    margin-left: auto;
+    background: none;
+    border: none;
+    color: var(--neon-pink);
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Glitch effect refinement */
+.glitch {
+    position: relative;
+    overflow: hidden; /* Contain the glitch effect */
+}
+
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    clip: rect(0, 900px, 0, 0); /* Adjust clip to prevent overflow */
+    background: linear-gradient(180deg, #ff0000 0%, #ff4500 50%, #ff8c00 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.glitch::before {
+    left: 2px;
+    text-shadow: -2px 0 #ff0000;
+    animation: glitch-1 2s infinite linear alternate-reverse;
+}
+
+.glitch::after {
+    left: -2px;
+    text-shadow: 2px 0 #ff8c00;
+    animation: glitch-2 2s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-1 {
+    0% {
+        clip: rect(20px, 900px, 56px, 0);
+    }
+    20% {
+        clip: rect(56px, 900px, 87px, 0);
+    }
+    40% {
+        clip: rect(87px, 900px, 112px, 0);
+    }
+    60% {
+        clip: rect(112px, 900px, 144px, 0);
+    }
+    80% {
+        clip: rect(144px, 900px, 175px, 0);
+    }
+    100% {
+        clip: rect(175px, 900px, 200px, 0);
+    }
+}
+
+@keyframes glitch-2 {
+    0% {
+        clip: rect(175px, 900px, 200px, 0);
+    }
+    20% {
+        clip: rect(144px, 900px, 175px, 0);
+    }
+    40% {
+        clip: rect(112px, 900px, 144px, 0);
+    }
+    60% {
+        clip: rect(87px, 900px, 112px, 0);
+    }
+    80% {
+        clip: rect(56px, 900px, 87px, 0);
+    }
+    100% {
+        clip: rect(20px, 900px, 56px, 0);
+    }
+}

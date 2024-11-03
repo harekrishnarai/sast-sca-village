@@ -350,76 +350,155 @@
 .compass .east { grid-area: east; }
 .compass .west { grid-area: west; }
 
-/* Add these styles after your existing map-container styles */
-
-.movement-instructions {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin-bottom: 2rem;
-    opacity: 0.7;
-    transition: opacity 0.3s ease;
+/* Remove any WASD-related styles */
+/* Delete or comment out any key styling specific to WASD */
+.key-controls,
+.wasd-controls {
+    display: none; /* or remove these classes entirely */
 }
 
-.movement-instructions:hover {
-    opacity: 1;
-}
-
-.control-hint {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.control-hint span {
-    font-size: 0.8rem;
-    color: #666;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.keys, .arrow-keys {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.25rem;
-}
-
-.key-row {
-    display: flex;
-    gap: 0.25rem;
-}
-
-kbd {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 30px;
-    height: 30px;
-    font-family: monospace;
-    font-size: 0.9rem;
-    color: #ffff00;
-    background: rgba(0, 0, 0, 0.5);
-    border: 1px solid rgba(255, 255, 0, 0.3);
-    border-radius: 4px;
-    box-shadow: 0 2px 0 rgba(255, 255, 0, 0.1);
-}
-
-/* Remove any instructions or overlays from the map container itself */
-.map-container {
-    border: 1px solid rgba(255, 255, 0, 0.3);
-    background: rgba(0, 0, 0, 0.3);
+/* Add styles for the player and arrows */
+.player-container {
     position: relative;
-    width: 100%;
-    height: 600px;
-    margin: 0 auto;
+    display: inline-block;
 }
 
-@media (max-width: 768px) {
-    .movement-instructions {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
+.player-arrows {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.direction-arrow {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-color: rgba(255, 255, 0, 0.6);  /* Yellow with transparency */
+    border-style: solid;
+    border-width: 0;
+    animation: pulse 1s infinite ease-in-out;
+}
+
+/* Position each arrow */
+.arrow-up {
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-top: 2px solid;
+    border-left: 2px solid;
+    transform: translateX(-50%) rotate(45deg);
+}
+
+.arrow-down {
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-135deg);
+    border-top: 2px solid;
+    border-left: 2px solid;
+}
+
+.arrow-left {
+    left: -15px;
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+    border-top: 2px solid;
+    border-left: 2px solid;
+}
+
+.arrow-right {
+    right: -15px;
+    top: 50%;
+    transform: translateY(-50%) rotate(135deg);
+    border-top: 2px solid;
+    border-left: 2px solid;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.4;
     }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.4;
+    }
+}
+
+/* Update navbar styles */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 40px; /* Reduced from typical 60-80px */
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 0, 0.2);
+}
+
+.nav-content {
+    height: 40px; /* Match nav height */
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Adjust logo size */
+.logo img {
+    height: 30px; /* Reduced size */
+    width: 30px;
+}
+
+/* Update footer styles */
+.site-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 30px; /* Minimal footer height */
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 0, 0.2);
+    z-index: 1000;
+}
+
+.footer-content {
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Adjust map container */
+.map-container {
+    position: fixed;
+    top: 40px; /* Match navbar height */
+    bottom: 30px; /* Match footer height */
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: calc(100vh - 70px); /* Subtract combined nav+footer height */
+    margin: 0;
+    border: none;
+    background: transparent;
+}
+
+/* Adjust map title and description */
+.map-section h1 {
+    display: none; /* Or make it very compact if you want to keep it */
+}
+
+.map-description {
+    display: none; /* Or make it very compact if you want to keep it */
+}
+
+/* Make map fill the container */
+.map {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
 }
