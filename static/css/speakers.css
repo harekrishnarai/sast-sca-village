@@ -1,0 +1,105 @@
+.speaker-card {
+    background-color: rgba(17, 24, 39, 0.5);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgb(31, 41, 55);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    height: 100px;
+}
+
+.speaker-card:hover {
+    border-color: rgba(251, 191, 36, 0.5);
+    transform: translateY(-2px);
+}
+
+.card-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    height: 100%;
+}
+
+.speaker-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgb(31, 41, 55);
+    background-color: black;
+    filter: brightness(0.95);
+}
+
+.speaker-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.speaker-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.25rem;
+}
+
+.speaker-role {
+    font-size: 0.75rem;
+    color: rgb(156, 163, 175);
+    margin-bottom: 0.5rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.social-link {
+    color: rgb(156, 163, 175);
+    transition: color 0.2s ease;
+    font-size: 0.9rem;
+}
+
+.social-link:hover {
+    color: rgb(251, 191, 36);
+}
+
+/* Grid layout adjustment */
+#speakers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .speaker-card {
+        height: 90px;
+    }
+
+    .speaker-image {
+        width: 50px;
+        height: 50px;
+    }
+
+    .speaker-name {
+        font-size: 0.9rem;
+    }
+
+    .speaker-role {
+        font-size: 0.7rem;
+    }
+
+    .social-link {
+        font-size: 0.8rem;
+    }
+}
+
+/* Optional: Add a subtle glow effect to match the chromatic aberration */
+.speaker-card:hover .speaker-image {
+    box-shadow: 
+        0 0 2px #ff0000,
+        0 0 4px #0000ff;
+}

@@ -16,71 +16,127 @@
     <link href="static/css/styles.css" rel="stylesheet">
     <link href="static/css/navigation.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Add in <head> section of each page -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
-<body>
-    <!-- Update nav section -->
-    <nav class="fixed top-0 w-full bg-[#000000]/95 z-50 h-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
-            <div class="flex justify-between items-center h-full">
-                <!-- Logo -->
-                <a href="/" class="flex items-center space-x-2">
-                    <img src="static/media/favicon/android-chrome-512x512.png" 
-                         alt="AppSec Logo" 
-                         class="h-12 w-12 transition-transform hover:scale-105"
-                         loading="lazy">
-                    <span class="hidden sm:block text-lg font-bold text-white">
-                        SAST SCA Village
-                    </span>
-                </a>
-                
-                <!-- Navigation Links -->
-                <div class="flex items-center space-x-8">
-                    <a href="team.html" class="text-white hover:text-yellow-400">Team</a>
-                    <a href="schedule.html" class="text-white hover:text-yellow-400">Schedule</a>
-                    <a href="navigation.html" class="text-white hover:text-yellow-400">Navigation</a>
-                    <a href="swag.html" class="text-white hover:text-yellow-400">Swag</a>
+<body class="bg-black text-white min-h-screen">
+    <nav x-data="{ open: false }" class="fixed top-0 w-full bg-black/90 backdrop-blur-md z-50 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="relative flex items-center justify-between h-16 md:h-24">
+                <div class="flex items-center">
+                    <a href="/" class="flex items-center space-x-2">
+                        <img src="static/media/favicon/android-chrome-512x512.png" 
+                             alt="AppSec Logo" 
+                             class="h-12 w-12 transition-transform hover:scale-105">
+                        <span class="hidden sm:block text-lg font-bold bg-gradient-to-r from-yellow-400 to-red-500 text-transparent bg-clip-text">
+                            SAST SCA Village
+                        </span>
+                    </a>
+                </div>
+
+                <div class="absolute inset-y-0 right-0 flex items-center md:hidden">
+                    <button type="button" 
+                            class="relative inline-flex items-center justify-center p-2 text-gray-400 hover:text-white"
+                            @click="open = !open"
+                            aria-controls="mobile-menu" 
+                            aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="hidden md:flex md:items-center md:space-x-8">
+                    <a href="team.html" class="text-white hover:text-yellow-400 transition-colors">Team</a>
+                    <a href="schedule.html" class="text-white hover:text-yellow-400 transition-colors">Schedule</a>
+                    <a href="navigation.html" class="text-white hover:text-yellow-400 transition-colors">Navigation</a>
+                    <a href="speakers.html" class="text-white hover:text-yellow-400 transition-colors">Speakers</a>
+                    <a href="swag.html" class="text-white hover:text-yellow-400 transition-colors">Swag</a>
                     <a href="https://discord.gg/jNUHxbTYXP" target="_blank" class="text-white hover:text-yellow-400">
                         <img src="static/media/discord.svg" alt="Discord" class="w-6 h-6">
                     </a>
-                    <button class="text-white hover:text-yellow-400">
+                    <button id="theme-toggle" class="text-white hover:text-yellow-400 transition-transform hover:scale-110">
                         <i class="fas fa-sun text-xl"></i>
                     </button>
+                </div>
+            </div>
+
+            <div class="md:hidden" id="mobile-menu" x-show="open" 
+                 x-transition:enter="transition ease-out duration-100 transform"
+                 x-transition:enter-start="opacity-0 scale-95"
+                 x-transition:enter-end="opacity-100 scale-100"
+                 x-transition:leave="transition ease-in duration-75 transform"
+                 x-transition:leave-start="opacity-100 scale-100"
+                 x-transition:leave-end="opacity-0 scale-95">
+                <div class="px-2 pt-2 pb-3 space-y-1 bg-gray-900/95 backdrop-blur-md">
+                    <a href="team.html" class="block px-3 py-2 text-white hover:text-yellow-400">Team</a>
+                    <a href="schedule.html" class="block px-3 py-2 text-white hover:text-yellow-400">Schedule</a>
+                    <a href="navigation.html" class="block px-3 py-2 text-white hover:text-yellow-400">Navigation</a>
+                    <a href="speakers.html" class="block px-3 py-2 text-white hover:text-yellow-400">Speakers</a>
+                    <a href="swag.html" class="block px-3 py-2 text-white hover:text-yellow-400">Swag</a>
+                    <a href="https://discord.gg/jNUHxbTYXP" class="block px-3 py-2 text-white hover:text-yellow-400">Discord</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <div class="hero">
-        <div class="grid-overlay"></div>
-        <canvas id="particles"></canvas>
-        <div class="content">
-            <h1 class="hero-title glitch" data-text="V1774G3 F700R P74N">V1774G3 F700R P74N</h1>
+    <div class="min-h-screen pt-24 pb-16 px-4 relative bg-gradient-to-b from-black to-gray-900">
+        <div class="absolute inset-0 bg-grid-pattern opacity-5"></div>
+        <canvas id="particles" class="fixed inset-0 pointer-events-none z-0"></canvas>
+        
+        <div class="max-w-7xl mx-auto relative z-10">
+            <h1 class="hero-title glitch text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center mb-8 mt-8 sm:mt-16" 
+                data-text="V1774G3 F700R P74N">
+                V1774G3 F700R P74N
+            </h1>
             
-            <div class="description-container">
-                <p>
-                    Discover the layout of the Hardware Hacking Village and all its unique stations, from practical labs to demos and workshops. Plan your route to experience each event highlight and make the most of your time with us!
+            <div class="description-container max-w-3xl mx-auto mb-8 px-4">
+                <p class="text-gray-300 text-sm sm:text-base text-center leading-relaxed">
+                    Discover the layout of the Hardware Hacking Village and all its unique stations, 
+                    from practical labs to demos and workshops. Plan your route to experience each 
+                    event highlight and make the most of your time with us!
                 </p>
             </div>
             
-            <div class="map-container">
-                <div class="map">
-                    <div class="compass">
-                        <div class="compass-directions">
-                            <span class="north">N</span>
-                            <span class="east">E</span>
-                            <span class="south">S</span>
-                            <span class="west">W</span>
+            <div class="map-container w-full max-w-4xl mx-auto p-4 bg-gray-900/50 backdrop-blur-sm rounded-lg shadow-xl">
+                <div class="map relative aspect-square sm:aspect-[4/3] md:aspect-[16/9] w-full overflow-hidden rounded-lg">
+                    <div class="compass absolute top-4 right-4 bg-black/70 p-2 rounded-full shadow-lg">
+                        <div class="compass-directions text-xs sm:text-sm flex items-center justify-center">
+                            <span class="north absolute top-0 text-yellow-400">N</span>
+                            <span class="east absolute right-0 text-white">E</span>
+                            <span class="south absolute bottom-0 text-white">S</span>
+                            <span class="west absolute left-0 text-white">W</span>
                         </div>
                     </div>
-                    <!-- Map content will be generated by map.js -->
+                </div>
+            </div>
+
+            <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 px-4">
+                <div class="bg-gray-900/50 backdrop-blur-sm p-4 rounded-lg">
+                    <h3 class="text-yellow-400 text-lg font-semibold mb-2">Practical Labs</h3>
+                    <p class="text-gray-300 text-sm">Hands-on experience with security tools and techniques</p>
+                </div>
+                <div class="bg-gray-900/50 backdrop-blur-sm p-4 rounded-lg">
+                    <h3 class="text-yellow-400 text-lg font-semibold mb-2">Demo Area</h3>
+                    <p class="text-gray-300 text-sm">Live demonstrations of security tools and vulnerabilities</p>
+                </div>
+                <div class="bg-gray-900/50 backdrop-blur-sm p-4 rounded-lg">
+                    <h3 class="text-yellow-400 text-lg font-semibold mb-2">Workshop Space</h3>
+                    <p class="text-gray-300 text-sm">Interactive sessions and group activities</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <footer class="site-footer">
-        <div class="footer-content">
-            <p>&copy; 2024 SAST SCA Village. All rights reserved.</p>
+    <footer class="bg-black/90 backdrop-blur-md border-t border-gray-800 py-4 px-4">
+        <div class="max-w-7xl mx-auto text-center">
+            <p class="text-gray-400 text-sm">
+                &copy; 2024 SAST SCA Village. All rights reserved.
+            </p>
         </div>
     </footer>
 

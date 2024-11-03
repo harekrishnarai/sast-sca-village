@@ -411,3 +411,214 @@
         clip: rect(20px, 900px, 56px, 0);
     }
 }
+
+/* Update existing styles */
+.hero {
+    @apply min-h-screen pt-24 relative;
+}
+
+.content {
+    @apply max-w-7xl mx-auto px-4;
+}
+
+.hero-title {
+    @apply text-center mb-8;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.description-container {
+    @apply max-w-3xl mx-auto mb-8;
+}
+
+.map-container {
+    @apply relative w-full max-w-4xl mx-auto rounded-lg overflow-hidden;
+    background: rgba(17, 24, 39, 0.7);
+    backdrop-filter: blur(8px);
+}
+
+.compass {
+    @apply absolute top-4 right-4 z-10 bg-black/70 p-2 rounded-full;
+    width: 60px;
+    height: 60px;
+}
+
+.compass-directions {
+    @apply relative w-full h-full flex items-center justify-center;
+}
+
+.compass-directions span {
+    @apply absolute text-sm font-semibold;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .compass {
+        width: 40px;
+        height: 40px;
+    }
+
+    .compass-directions span {
+        @apply text-xs;
+    }
+}
+
+/* Base styles */
+.hero {
+    min-height: 100vh;
+    padding-top: 6rem;
+    position: relative;
+}
+
+.content {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.hero-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.description-container {
+    max-width: 48rem;
+    margin: 0 auto 2rem auto;
+}
+
+.map-container {
+    position: relative;
+    width: 100%;
+    max-width: 56rem;
+    margin: 0 auto;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    background: rgba(17, 24, 39, 0.7);
+    backdrop-filter: blur(8px);
+}
+
+.compass {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 0.5rem;
+    border-radius: 9999px;
+    width: 60px;
+    height: 60px;
+}
+
+.compass-directions {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.compass-directions span {
+    position: absolute;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .hero-title {
+        font-size: 2rem; /* Smaller font size for mobile */
+    }
+
+    .description-container {
+        padding: 0 1rem;
+    }
+
+    .map-container {
+        margin: 1rem;
+        width: calc(100% - 2rem);
+    }
+
+    .compass {
+        width: 40px;
+        height: 40px;
+        top: 0.5rem;
+        right: 0.5rem;
+    }
+
+    .compass-directions span {
+        font-size: 0.75rem;
+    }
+
+    /* Adjust booth sizes for mobile */
+    .booth {
+        width: 60px;
+        height: 40px;
+        font-size: 10px;
+    }
+
+    .entrance, .exit {
+        width: 60px;
+        height: 40px;
+    }
+
+    .entrance .label, .exit .label {
+        font-size: 10px;
+    }
+}
+
+/* Additional mobile optimizations */
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 1.75rem;
+        margin-top: 1rem;
+    }
+
+    .description-container p {
+        font-size: 0.875rem;
+        line-height: 1.6;
+    }
+
+    .map-container {
+        padding: 0.5rem;
+    }
+
+    .booth {
+        width: 50px;
+        height: 35px;
+        font-size: 9px;
+    }
+
+    /* Adjust tooltip for mobile */
+    .booth-tooltip {
+        width: 150px;
+        font-size: 0.75rem;
+        padding: 8px;
+    }
+
+    /* Adjust modal for mobile */
+    .challenge-modal {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .modal-header {
+        margin-bottom: 15px;
+    }
+}
+
+/* Tablet optimizations */
+@media (min-width: 641px) and (max-width: 1024px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .map-container {
+        max-width: 90%;
+    }
+
+    .booth {
+        width: 70px;
+        height: 45px;
+    }
+}

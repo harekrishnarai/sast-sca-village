@@ -4,13 +4,13 @@ const scheduleData = {
             time: "9:00 AM - 9:45 AM",
             title: "Introduction to SAST and SCA",
             level: "Beginner",
-            speakers: ["Security Educator", "Developer Advocate"]
+            speakers: ["Alex Chen", "Sarah Martinez"]
         },
         {
             time: "9:45 AM - 10:30 AM",
             title: "Setting Up Your First SAST Tool",
             level: "Beginner",
-            speakers: ["Tool Developer", "Security Engineer"]
+            speakers: ["Michael Kumar", "Emma Wilson"]
         },
         {
             time: "10:30 AM - 10:45 AM",
@@ -22,17 +22,17 @@ const scheduleData = {
             time: "10:45 AM - 11:30 AM",
             title: "Secure Coding Practices",
             level: "Beginner",
-            speakers: ["Application Security Specialist"]
+            speakers: ["Michael Kumar", "Sarah Martinez"]
         },
         {
             time: "11:30 AM - 12:15 PM",
             title: "Overview of Vulnerable Applications",
             level: "Beginner",
-            speakers: ["Security Educator", "Ethical Hacker"]
+            speakers: ["Alex Chen", "Raj Patel"]
         },
         {
             time: "12:15 PM - 1:15 PM",
-            title: "Lunch",
+            title: "Lunch Break",
             level: "",
             speakers: []
         },
@@ -40,13 +40,13 @@ const scheduleData = {
             time: "1:15 PM - 2:00 PM",
             title: "Advanced Semgrep Usage",
             level: "Intermediate",
-            speakers: ["Semgrep Expert", "Security Researcher"]
+            speakers: ["Lisa Zhang", "Marcus Johnson"]
         },
         {
             time: "2:00 PM - 2:45 PM",
             title: "Integrating SAST in CI/CD",
             level: "Intermediate",
-            speakers: ["DevOps Engineer", "CI/CD Specialist"]
+            speakers: ["Emma Wilson", "Michael Kumar"]
         },
         {
             time: "2:45 PM - 3:00 PM",
@@ -58,13 +58,13 @@ const scheduleData = {
             time: "3:00 PM - 3:45 PM",
             title: "Understanding Software Composition Analysis",
             level: "Intermediate",
-            speakers: ["SCA Tool Developer", "Security Consultant"]
+            speakers: ["Raj Patel", "Lisa Zhang"]
         },
         {
             time: "3:45 PM - 4:30 PM",
             title: "Vulnerability Remediation Strategies",
             level: "Intermediate",
-            speakers: ["Security Analyst", "Risk Management Expert"]
+            speakers: ["Sarah Martinez", "Omar Hassan"]
         }
     ],
     "Feb 21": [
@@ -72,13 +72,13 @@ const scheduleData = {
             time: "9:00 AM - 9:45 AM",
             title: "Customizing CodeQL Queries",
             level: "Advanced",
-            speakers: ["CodeQL Expert", "Security Researcher"]
+            speakers: ["Sophie Anderson", "Omar Hassan"]
         },
         {
             time: "9:45 AM - 10:30 AM",
             title: "Threat Modeling for SAST/SCA",
             level: "Advanced",
-            speakers: ["Application Security Architect"]
+            speakers: ["Priya Sharma", "Alex Chen"]
         },
         {
             time: "10:30 AM - 10:45 AM",
@@ -90,17 +90,17 @@ const scheduleData = {
             time: "10:45 AM - 11:30 AM",
             title: "Building Your Own SAST Tool",
             level: "Advanced",
-            speakers: ["Security Tool Developer", "Software Engineer"]
+            speakers: ["Marcus Johnson", "Michael Kumar"]
         },
         {
             time: "11:30 AM - 12:15 PM",
             title: "Real-World Case Studies",
             level: "Advanced",
-            speakers: ["Incident Response Specialist", "Case Study Speaker"]
+            speakers: ["Emma Wilson", "Raj Patel"]
         },
         {
             time: "12:15 PM - 1:15 PM",
-            title: "Lunch",
+            title: "Lunch Break",
             level: "",
             speakers: []
         },
@@ -108,13 +108,13 @@ const scheduleData = {
             time: "1:15 PM - 2:00 PM",
             title: "Tooling Arsenal for Application Security",
             level: "Arsenal",
-            speakers: ["Security Consultant", "Tool Expert"]
+            speakers: ["Lisa Zhang", "Sophie Anderson"]
         },
         {
             time: "2:00 PM - 4:30 PM",
             title: "Hands-On Workshop: Secure Coding Practices",
-            level: "Beginner",
-            speakers: ["Application Security Specialist"]
+            level: "Workshop",
+            speakers: ["Sarah Martinez", "Priya Sharma"]
         }
     ]
 };

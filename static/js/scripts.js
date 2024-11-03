@@ -81,3 +81,39 @@ document.addEventListener('click', function(event) {
 document.getElementById('mobile-menu-button').addEventListener('click', function() {
     document.getElementById('mobile-menu').classList.toggle('mobile-menu-open');
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Mobile menu functionality
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener('click', () => {
+            // Toggle the 'hidden' class
+            mobileMenu.classList.toggle('hidden');
+            
+            // Optional: Animate the menu icon
+            const menuIcon = mobileMenuButton.querySelector('i');
+            if (menuIcon) {
+                menuIcon.classList.toggle('fa-bars');
+                menuIcon.classList.toggle('fa-times');
+            }
+        });
+    }
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+            if (!e.target.closest('#mobile-menu') && !e.target.closest('#mobile-menu-button')) {
+                mobileMenu.classList.add('hidden');
+                
+                // Reset the menu icon
+                const menuIcon = mobileMenuButton.querySelector('i');
+                if (menuIcon) {
+                    menuIcon.classList.add('fa-bars');
+                    menuIcon.classList.remove('fa-times');
+                }
+            }
+        }
+    });
+});
