@@ -6,9 +6,9 @@
     --modal-bg: rgba(5, 5, 5, 0.95); */
 
     /* New cyberpunk theme */
-    --neon-blue: #ffff00;     /* Bright cyan */
+    --neon-blue: #FFE45C;     /* Yellow */
     --dark-bg: #000000;       /* Deep navy blue */
-    --accent-color: #ff2a6d;  /* Hot pink */
+    --accent-color: #ffff00;  /* Hot pink */
     --secondary-accent: #8b61ff; /* Purple */
     --modal-bg: rgba(10, 11, 26, 0.95);
 }
@@ -269,7 +269,8 @@ nav {
 
 .cta-button {
     display: inline-block;
-    padding: 0.75rem 1.5rem;  /* Reduced from 1rem 2rem */
+    padding: 0.75rem 1.5rem;
+    /* Use CSS variables for the gradient */
     background: linear-gradient(45deg, var(--neon-blue), var(--secondary-accent));
     color: black;
     text-decoration: none;
@@ -277,14 +278,15 @@ nav {
     font-weight: bold;
     text-transform: uppercase;
     margin-top: 2rem;
-    margin-right: 1rem;  /* Add spacing between buttons */
+    margin-right: 1rem;
     transition: transform 0.3s;
-    /* Secondary cursor - shows it's clickable */
-    cursor: pointer;
+    cursor: pointer !important;
 }
 
 .cta-button:hover {
     transform: scale(1.05);
+    /* Reverse gradient on hover */
+    background: linear-gradient(45deg, var(--secondary-accent), var(--neon-blue));
 }
 
 .particles {

@@ -197,7 +197,7 @@
 }
 
 .event-item:hover {
-    border: 1px solid var(--neon-pink);
+    border: 1px solid yellow;
 }
 
 .event-time {
@@ -277,8 +277,8 @@
 .entrance, .exit {
     width: 100px;
     height: 60px;
-    border-color: var(--neon-pink);
-    color: var(--neon-pink);
+    border-color: yellow;
+    color: yellow;
 }
 
 .entrance .arrow, .exit .arrow {
@@ -300,7 +300,7 @@
 
 .path-line {
     fill: none;
-    stroke: var(--neon-pink);
+    stroke: yellow;
     stroke-width: 2;
     stroke-dasharray: 10, 5;
     animation: dashAnimation 30s linear infinite;
@@ -336,7 +336,7 @@
         ". north ."
         "west . east"
         ". south .";
-    color: var(--neon-pink);
+    color: yellow;
     font-size: 1.2em;
     text-align: center;
 }
