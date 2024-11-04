@@ -1,58 +1,25 @@
 const teamMembers = [
     {
-        name: "Sagnik Haldar",
-        handle: "0xSagnik",
+        name: "Hare Krishna Rai",
+        handle: "0xblurr3d",
         role: "Village Lead & SAST Expert",
         image: "static/media/team/man.png",
-        tags: ["SAST", "AppSec", "DevSecOps"],
+        tags: ["SAST", "AppSec", "DevSecOps","K8s", "Cloud Security", "GenAI"],
         social: {
-            twitter: "SagnikHaldar1",
-            linkedin: "sagnik-haldar",
-            github: "Sagnik-Haldar"
+            twitter: "harekrishna_rai",
+            linkedin: "harekrishnarai",
+            github: "harekrishnarai"
         }
     },
     {
-        name: "Alice Cooper",
-        handle: "hex_queen",
+        name: "Gaurav Joshi",
+        handle: "gauravjoshi",
         role: "Container Security Specialist",
-        image: "static/media/team/woman.png",
+        image: "static/media/team/man.png",
         tags: ["Containers", "K8s", "Cloud"],
         social: {
-            twitter: "hex_queen",
-            github: "hex_queen"
-        }
-    },
-    {
-        name: "Bob Davidson",
-        handle: "binary_ninja",
-        role: "Secure Code Reviewer",
-        image: "static/media/team/man.png",
-        tags: ["CodeQL", "Static Analysis"],
-        social: {
-            linkedin: "binary-ninja",
-            github: "binary_ninja"
-        }
-    },
-    {
-        name: "Carol Matrix",
-        handle: "cyber_sentinel",
-        role: "API Security Expert",
-        image: "static/media/team/man.png",
-        tags: ["API", "OAuth", "JWT"],
-        social: {
-            twitter: "cyber_sentinel",
-            github: "cyber_sentinel"
-        }
-    },
-    {
-        name: "Dave Exploit",
-        handle: "0xDave",
-        role: "Supply Chain Guardian",
-        image: "static/media/team/man.png",
-        tags: ["SCA", "Dependencies"],
-        social: {
-            twitter: "0xDave",
-            linkedin: "dave-exploit"
+            twitter: "gauravjoshi",
+            github: "gauravjoshii"
         }
     }
 ];
