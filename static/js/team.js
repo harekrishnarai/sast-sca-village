@@ -2,7 +2,7 @@ const teamMembers = [
     {
         name: "Hare Krishna Rai",
         handle: "0xblurr3d",
-        role: "Village Lead & SAST Expert",
+        role: "Village Lead & Supply Chain Security Expert",
         image: "static/media/team/man.png",
         tags: ["SAST", "AppSec", "DevSecOps","K8s", "Cloud Security", "GenAI"],
         social: {
@@ -14,9 +14,9 @@ const teamMembers = [
     {
         name: "Gaurav Joshi",
         handle: "gauravjoshi",
-        role: "Container Security Specialist",
+        role: "Village Co-Lead & Cloud Security Expert",
         image: "static/media/team/man.png",
-        tags: ["Containers", "K8s", "Cloud"],
+        tags: ["Containers Security", "Vulnerability management", "K8s Security", "Cloud Security"],
         social: {
             twitter: "gauravjoshi",
             github: "gauravjoshii"
