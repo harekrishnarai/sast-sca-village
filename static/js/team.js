@@ -19,6 +19,7 @@ const teamMembers = [
         tags: ["Containers Security", "Vulnerability management", "K8s Security", "Cloud Security"],
         social: {
             twitter: "gauravjoshi",
+            linkedin:"gauravjoshii",
             github: "gauravjoshii"
         }
     }
