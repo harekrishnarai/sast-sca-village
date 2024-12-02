@@ -4,14 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Favicon links -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="static/media/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="static/media/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="static/media/favicon/favicon-16x16.png">
     
-    <title>Speakers - SAST SCA Village</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Preloader resources -->
+    <link href="static/css/terminal.css" rel="stylesheet">
+    <script src="static/js/terminal.js"></script>
+    <script src="static/js/preloader.js"></script>
+    
+    <!-- Other resources -->
+    <link href="static/css/styles.css" rel="stylesheet">
     <link href="static/css/speakers.css" rel="stylesheet">
-    <!-- Add in <head> section of each page -->
+    <title>Speakers - SAST SCA Village</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="static/js/scripts.js" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body class="bg-black text-white">
@@ -75,19 +85,33 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <!-- Hero Title -->
             <h1 class="hero-title glitch text-4xl md:text-6xl lg:text-7xl font-bold text-center mb-8 mt-16" 
-                data-text="SPEAKERS">
+                data-text="">
                 SPEAKERS
             </h1>
             
-            <!-- Description -->
-            <p class="text-gray-400 text-center max-w-3xl mx-auto mb-16">
-                Meet our distinguished speakers who will be sharing their expertise and insights 
-                throughout the SAST SCA Village sessions.
-            </p>
+            <!-- Updated Description -->
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-8">
+                <p class="text-gray-400">
+                    We're currently curating an exceptional lineup of speakers for SAST SCA Village 2025!
+                </p>
+                
+                <!-- Added CFP Section -->
+                <div class="bg-gray-900/50 backdrop-blur-sm p-6 rounded-lg">
+                    <h2 class="text-yellow-400 text-xl font-bold mb-4">Call for Papers is Open!</h2>
+                    <p class="text-gray-300 mb-4">
+                        Are you passionate about Application Security? Share your expertise with the community!
+                    </p>
+                    <a href="https://seasides.net/cfp" 
+                       target="_blank" 
+                       class="inline-block bg-yellow-400 text-black px-6 py-2 rounded-lg hover:bg-yellow-300 transition-colors">
+                        Submit Your Talk
+                    </a>
+                </div>
 
-            <!-- Speakers Grid -->
-            <div id="speakers-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Speakers will be dynamically loaded here -->
+                <!-- Added Rotating Quotes -->
+                <div id="rotating-quotes" class="mt-8 italic text-gray-400">
+                    "Finding the perfect blend of expertise and innovation..."
+                </div>
             </div>
         </div>
     </div>

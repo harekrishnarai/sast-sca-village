@@ -260,4 +260,26 @@ document.addEventListener('DOMContentLoaded', () => {
             modal.classList.remove('flex');
         }
     });
+
+    // Rotating quotes
+    const quotes = [
+        "Finding the perfect blend of expertise and innovation...",
+        "Curating voices that shape the future of application security...",
+        "Bringing together the brightest minds in SAST and SCA...",
+        "Creating a platform for knowledge exchange and growth...",
+        "Assembling industry leaders and security pioneers..."
+    ];
+
+    let currentQuote = 0;
+    const quoteElement = document.getElementById('rotating-quotes');
+
+    setInterval(() => {
+        currentQuote = (currentQuote + 1) % quotes.length;
+        quoteElement.style.opacity = 0;
+        
+        setTimeout(() => {
+            quoteElement.textContent = quotes[currentQuote];
+            quoteElement.style.opacity = 1;
+        }, 500);
+    }, 4000);
 }); 

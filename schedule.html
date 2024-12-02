@@ -10,13 +10,18 @@
     <link rel="icon" type="image/png" sizes="32x32" href="static/media/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="static/media/favicon/favicon-16x16.png">
     
-    <title>Schedule - SAST SCA Village</title>
-    <script async src="https://www.googletagmanager.com/gtag/js?id="></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Preloader resources -->
+    <link href="static/css/terminal.css" rel="stylesheet">
+    <script src="static/js/terminal.js"></script>
+    <script src="static/js/preloader.js"></script>
+    
+    <!-- Other resources -->
     <link href="static/css/styles.css" rel="stylesheet">
     <link href="static/css/schedule.css" rel="stylesheet">
+    <title>Schedule - SAST SCA Village</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="static/js/scripts.js" defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Add in <head> section of each page -->
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body class="bg-black text-white">
@@ -85,28 +90,54 @@
         </div>
     </nav>
 
-    <div class="hero">
-        <div class="grid-overlay"></div>
-        <canvas id="particles" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1;"></canvas>
-        <div class="content">
-            <h1 class="hero-title glitch" data-text="Schedule">5CH3DUL3</h1>
-            <p style="color: #808080; text-align: justify;">Find all the essential notifications and a detailed hour-by-hour itinerary for the village activities.</p>
+    <!-- Hero Section -->
+    <div class="min-h-screen pt-24 pb-16 relative bg-gradient-to-b from-black to-gray-900">
+        <div class="absolute inset-0 bg-grid-pattern opacity-5"></div>
+        <canvas id="particles" class="fixed inset-0 pointer-events-none z-0"></canvas>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <!-- Hero Title -->
+            <h1 class="hero-title glitch text-4xl md:text-6xl lg:text-7xl font-bold text-center mb-8 mt-16" 
+                data-text="">
+                SCHEDULE
+            </h1>
             
-            <div class="schedule-container">
-                <div id="schedule-content">
-                    <!-- Schedule content will be rendered here -->
+            <!-- Schedule Description -->
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-8">
+                <p class="text-gray-400">
+                    We're currently finalizing our schedule for SAST SCA Village 2025!
+                </p>
+                
+                <!-- CFP Section -->
+                <div class="bg-gray-900/50 backdrop-blur-sm p-6 rounded-lg">
+                    <h2 class="text-yellow-400 text-xl font-bold mb-4">Call for Papers is Open!</h2>
+                    <p class="text-gray-300 mb-4">
+                        Want to be part of our schedule? Submit your talk proposal and share your knowledge with the community!
+                    </p>
+                    <a href="https://seasides.net/cfp" 
+                       target="_blank" 
+                       class="inline-block bg-yellow-400 text-black px-6 py-2 rounded-lg hover:bg-yellow-300 transition-colors">
+                        Submit Your Talk
+                    </a>
+                </div>
+
+                <!-- Added Rotating Quotes -->
+                <div id="rotating-quotes" class="mt-8 italic text-gray-400">
+                    "Crafting an engaging schedule for security enthusiasts..."
                 </div>
             </div>
         </div>
     </div>
 
-    <footer class="site-footer">
-        <div class="footer-content">
-            <p>&copy; 2024 SAST SCA Village. All rights reserved.</p>
+    <!-- Footer -->
+    <footer class="bg-black/90 backdrop-blur-md border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 py-4">
+            <p class="text-gray-400 text-sm text-center">
+                &copy; 2024 SAST SCA Village. All rights reserved.
+            </p>
         </div>
     </footer>
 
-    <!-- Add particles.js library -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="static/js/scripts.js"></script>
     <script src="static/js/schedule.js"></script>
