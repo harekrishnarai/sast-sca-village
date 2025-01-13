@@ -181,6 +181,13 @@ const scheduleData = [
                         bio: 'Nikhil is an expert in code security analysis and SAST tool implementation. With a strong background in secure coding practices and vulnerability assessment, he helps teams integrate security into their development workflow effectively.',
                         linkedin: 'https://www.linkedin.com/in/nikhil-sahoo-87204b106/',
                         role: 'Security Engineer II @ Microsoft'
+                    },
+                    {
+                        name: 'Ravindra Penumarthi',
+                        photo: 'static/media/team/ravindra.jpeg',
+                        bio: 'Ravindra specializes in application security with a focus on static analysis and vulnerability research. He has contributed to multiple open-source security tools and regularly speaks at security conferences about SAST implementation strategies.',
+                        linkedin: 'https://www.linkedin.com/in/ravindrapenumarthi/',
+                        role: 'Security Engineer II @ Microsoft'
                     }
                 ],
                 duration: '2 hours',
