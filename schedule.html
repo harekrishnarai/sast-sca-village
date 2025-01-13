@@ -10,17 +10,11 @@
     <link rel="icon" type="image/png" sizes="32x32" href="static/media/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="static/media/favicon/favicon-16x16.png">
     
-    <!-- Preloader resources -->
-    <link href="static/css/terminal.css" rel="stylesheet">
-    <script src="static/js/terminal.js"></script>
-    <script src="static/js/preloader.js"></script>
-    
-    <!-- Other resources -->
+    <!-- Core resources -->
     <link href="static/css/styles.css" rel="stylesheet">
     <link href="static/css/schedule.css" rel="stylesheet">
     <title>Schedule - SAST SCA Village</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <script src="static/js/scripts.js" defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
@@ -28,35 +22,19 @@
     <!-- Navigation -->
     <nav x-data="{ open: false }" class="fixed top-0 w-full bg-black/90 backdrop-blur-md z-50 border-b border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="relative flex items-center justify-between h-16 md:h-24">
-                <div class="flex items-center">
-                    <a href="/" class="flex items-center space-x-2">
-                        <img src="static/media/favicon/android-chrome-512x512.png" 
-                             alt="AppSec Logo" 
-                             class="h-12 w-12 transition-transform hover:scale-105">
-                        <span class="hidden sm:block text-lg font-bold bg-gradient-to-r from-yellow-400 to-red-500 text-transparent bg-clip-text">
-                            SAST SCA Village
-                        </span>
-                    </a>
-                </div>
-    
-                <div class="absolute inset-y-0 right-0 flex items-center md:hidden">
-                    <button type="button" 
-                            class="relative inline-flex items-center justify-center p-2 text-gray-400 hover:text-white"
-                            @click="open = !open"
-                            aria-controls="mobile-menu" 
-                            aria-expanded="false">
-                        <span class="sr-only">Open main menu</span>
-                        <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                        <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
-                </div>
-    
-                <div class="hidden md:flex md:items-center md:space-x-8">
+            <div class="flex justify-between items-center h-16 md:h-24">
+                <!-- Logo -->
+                <a href="/" class="flex items-center space-x-2">
+                    <img src="static/media/favicon/android-chrome-512x512.png" 
+                         alt="AppSec Logo" 
+                         class="h-12 w-12 md:h-16 md:w-16 transition-transform hover:scale-105">
+                    <span class="hidden sm:block text-lg md:text-xl font-bold bg-gradient-to-r from-yellow-400 to-red-500 text-transparent bg-clip-text">
+                        SAST SCA Village
+                    </span>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
                     <a href="team.html" class="text-white hover:text-yellow-400 transition-colors">Team</a>
                     <a href="schedule.html" class="text-white hover:text-yellow-400 transition-colors">Schedule</a>
                     <a href="navigation.html" class="text-white hover:text-yellow-400 transition-colors">Navigation</a>
@@ -65,19 +43,24 @@
                     <a href="https://discord.gg/jNUHxbTYXP" target="_blank" class="text-white hover:text-yellow-400">
                         <img src="static/media/discord.svg" alt="Discord" class="w-6 h-6">
                     </a>
-                    <button id="theme-toggle" class="text-white hover:text-yellow-400 transition-transform hover:scale-110">
-                        <i class="fas fa-sun text-xl"></i>
-                    </button>
                 </div>
+
+                <!-- Mobile Menu Button -->
+                <button x-on:click="open = !open" 
+                        class="md:hidden text-white hover:text-yellow-400">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
             </div>
-    
-            <div class="md:hidden" id="mobile-menu" x-show="open" 
-                 x-transition:enter="transition ease-out duration-100 transform"
+
+            <!-- Mobile Navigation -->
+            <div x-show="open" 
+                 x-transition:enter="transition ease-out duration-200"
                  x-transition:enter-start="opacity-0 scale-95"
                  x-transition:enter-end="opacity-100 scale-100"
-                 x-transition:leave="transition ease-in duration-75 transform"
+                 x-transition:leave="transition ease-in duration-150"
                  x-transition:leave-start="opacity-100 scale-100"
-                 x-transition:leave-end="opacity-0 scale-95">
+                 x-transition:leave-end="opacity-0 scale-95"
+                 class="md:hidden">
                 <div class="px-2 pt-2 pb-3 space-y-1 bg-gray-900/95 backdrop-blur-md">
                     <a href="team.html" class="block px-3 py-2 text-white hover:text-yellow-400">Team</a>
                     <a href="schedule.html" class="block px-3 py-2 text-white hover:text-yellow-400">Schedule</a>
@@ -102,29 +85,21 @@
                 SCHEDULE
             </h1>
             
+            <!-- Updated schedule container with flex layout -->
+            <div class="schedule-container bg-gray-900/50 backdrop-blur-md rounded-lg border border-gray-800">
+                <div class="schedule-content" id="scheduleContent">
+                    <!-- Content will be populated by JavaScript -->
+                </div>
+            </div>
+
             <!-- Schedule Description -->
             <div class="text-center max-w-3xl mx-auto mb-16 space-y-8">
-                <p class="text-gray-400">
-                    We're currently finalizing our schedule for SAST SCA Village 2025!
-                </p>
-                
+               
                 <!-- CFP Section -->
-                <div class="bg-gray-900/50 backdrop-blur-sm p-6 rounded-lg">
-                    <h2 class="text-yellow-400 text-xl font-bold mb-4">Call for Papers is Open!</h2>
-                    <p class="text-gray-300 mb-4">
-                        Want to be part of our schedule? Submit your talk proposal and share your knowledge with the community!
-                    </p>
-                    <a href="https://seasides.net/cfp" 
-                       target="_blank" 
-                       class="inline-block bg-yellow-400 text-black px-6 py-2 rounded-lg hover:bg-yellow-300 transition-colors">
-                        Submit Your Talk
-                    </a>
-                </div>
+                
 
                 <!-- Added Rotating Quotes -->
-                <div id="rotating-quotes" class="mt-8 italic text-gray-400">
-                    "Crafting an engaging schedule for security enthusiasts..."
-                </div>
+                
             </div>
         </div>
     </div>

@@ -83,35 +83,24 @@
         <canvas id="particles" class="fixed inset-0 pointer-events-none z-0"></canvas>
         
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <!-- Hero Title -->
-            <h1 class="hero-title glitch text-4xl md:text-6xl lg:text-7xl font-bold text-center mb-8 mt-16" 
-                data-text="">
-                SPEAKERS
-            </h1>
+            <!-- Centered Hero Title with Glitch -->
+            <div class="flex justify-center items-center mt-16 mb-8">
+                <h1 class="hero-title glitch text-4xl md:text-6xl lg:text-7xl font-bold" 
+                    data-text="SPEAKERS">
+                    SPEAKERS
+                </h1>
+            </div>
             
             <!-- Updated Description -->
-            <div class="text-center max-w-3xl mx-auto mb-16 space-y-8">
-                <p class="text-gray-400">
-                    We're currently curating an exceptional lineup of speakers for SAST SCA Village 2025!
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <p class="text-gray-400 text-lg">
+                    Meet our exceptional lineup of speakers for SAST SCA Village 2025!
                 </p>
-                
-                <!-- Added CFP Section -->
-                <div class="bg-gray-900/50 backdrop-blur-sm p-6 rounded-lg">
-                    <h2 class="text-yellow-400 text-xl font-bold mb-4">Call for Papers is Open!</h2>
-                    <p class="text-gray-300 mb-4">
-                        Are you passionate about Application Security? Share your expertise with the community!
-                    </p>
-                    <a href="https://seasides.net/cfp" 
-                       target="_blank" 
-                       class="inline-block bg-yellow-400 text-black px-6 py-2 rounded-lg hover:bg-yellow-300 transition-colors">
-                        Submit Your Talk
-                    </a>
-                </div>
+            </div>
 
-                <!-- Added Rotating Quotes -->
-                <div id="rotating-quotes" class="mt-8 italic text-gray-400">
-                    "Finding the perfect blend of expertise and innovation..."
-                </div>
+            <!-- Speakers Grid Container -->
+            <div id="speakers-grid" class="max-w-7xl mx-auto grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Speakers will be dynamically loaded here -->
             </div>
         </div>
     </div>
@@ -138,6 +127,7 @@
     </footer>
 
     <script src="static/js/scripts.js"></script>
+    <script src="static/js/schedule.js"></script>
     <script src="static/js/speakers.js"></script>
 </body>
 </html> 
