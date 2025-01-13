@@ -21,7 +21,7 @@ const extractSpeakers = () => {
             linkedin: 'https://www.linkedin.com/in/gauravbhosale1/',
             photo: 'static/media/team/Gaurav_Bhosale.jpeg'
         },
-        'Nikhil': {
+        'Nikhil Sahoo': {
             role: 'Security Engineer II @ Microsoft',
             bio: 'Nikhil is an expert in code security analysis and SAST tool implementation. With a strong background in secure coding practices and vulnerability assessment, he helps teams integrate security into their development workflow effectively.',
             linkedin: 'https://www.linkedin.com/in/nikhil-sahoo-87204b106/',
