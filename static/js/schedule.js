@@ -176,18 +176,11 @@ const scheduleData = [
                 title: 'Lightweight Secure Code Review: A Deep Dive into SAST with Semgrep (Part 2)', 
                 speakers: [
                     {
-                        name: 'Nikhil',
+                        name: 'Nikhil Sahoo',
                         photo: 'static/media/team/nikhil_sahoo.jpeg',
                         bio: 'Nikhil is an expert in code security analysis and SAST tool implementation. With a strong background in secure coding practices and vulnerability assessment, he helps teams integrate security into their development workflow effectively.',
                         linkedin: 'https://www.linkedin.com/in/nikhil-sahoo-87204b106/',
                         role: 'Security Engineer II @ Microsoft'
-                    },
-                    {
-                        name: 'Ravindra',
-                        photo: 'static/media/team/ravindra.jpeg',
-                        bio: 'Ravindra specializes in application security with a focus on static analysis and vulnerability research. He has contributed to multiple open-source security tools and regularly speaks at security conferences about SAST implementation strategies.',
-                        linkedin: 'https://www.linkedin.com/in/ravindrapenumarthi/',
-                        role: 'Security Researcher'
                     }
                 ],
                 duration: '2 hours',
