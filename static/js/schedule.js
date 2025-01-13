@@ -68,7 +68,7 @@ const scheduleData = [
                 time: '10:00 AM - 11:00 AM', 
                 title: 'Introduction to SAST with Enterprise Tools', 
                 speaker: {
-                    name: 'Gaurav',
+                    name: 'Gaurav Joshi',
                     photo: 'static/media/team/Gaurav_Joshi.jpg',
                     bio: 'Gaurav is a seasoned Security Engineer specializing in SAST implementation and DevSecOps practices. With over 6 years of experience in application security, he has helped numerous organizations integrate security into their development lifecycle. He is passionate about automating security controls and building scalable security solutions.',
                     linkedin: 'https://linkedin.com/in/gauravjoshii',
@@ -90,7 +90,7 @@ const scheduleData = [
                 time: '11:15 AM - 12:45 PM', 
                 title: 'M.D.A.V.I (Missing Dependency Attack Vector Identification)', 
                 speaker: {
-                    name: 'Kartik',
+                    name: 'Kartik Singh',
                     photo: 'static/media/team/kartik_singh.jpeg',
                     bio: 'Kartik is an accomplished security researcher focusing on dependency analysis and supply chain security. He has identified and responsibly disclosed multiple vulnerabilities in open-source packages. His research work has contributed to improving security practices in the software supply chain ecosystem.',
                     linkedin: 'https://linkedin.com/in/kartik00013/',
@@ -204,7 +204,7 @@ const scheduleData = [
                 time: '12:45 PM - 1:45 PM', 
                 title: 'Introduction to SCA & Enterprise Tools', 
                 speaker: {
-                    name: 'Hare Krishna',
+                    name: 'Hare Krishna Rai',
                     photo: 'static/media/team/Hare_Krishna_Rai.jpg',
                     bio: 'Hare Krishna is a DevSecOps practitioner with expertise in building secure CI/CD pipelines. He focuses on integrating security controls into the development process and automating security testing. His work has helped organizations achieve better security without compromising development velocity.',
                     linkedin: 'https://linkedin.com/in/harekrishnarai',
@@ -226,7 +226,7 @@ const scheduleData = [
                 time: '2:00 PM - 3:00 PM', 
                 title: 'How to Build Your Own SCA Tool?', 
                 speaker: {
-                    name: 'Hare Krishna',
+                    name: 'Hare Krishna Rai',
                     photo: 'static/media/team/Hare_Krishna_Rai.jpg',
                     bio: 'Hare Krishna is a DevSecOps practitioner with expertise in building secure CI/CD pipelines. He focuses on integrating security controls into the development process and automating security testing. His work has helped organizations achieve better security without compromising development velocity.',
                     linkedin: 'https://linkedin.com/in/harekrishnarai',

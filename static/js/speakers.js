@@ -3,13 +3,13 @@ const extractSpeakers = () => {
     const uniqueSpeakers = new Map();
     
     const speakerBios = {
-        'Gaurav': {
+        'Gaurav Joshi': {
             role: 'Product Security Engineer @ HighRadius',
             bio: 'Gaurav is a seasoned Security Engineer specializing in SAST implementation and DevSecOps practices. With over 6 years of experience in application security, he has helped numerous organizations integrate security into their development lifecycle. He is passionate about automating security controls and building scalable security solutions.',
             linkedin: 'https://linkedin.com/in/gauravjoshii',
             photo: 'static/media/team/Gaurav_Joshi.jpg'
         },
-        'Kartik': {
+        'Kartik Singh': {
             role: 'Security Researcher @ Loginsoft',
             bio: 'Kartik is an accomplished security researcher focusing on dependency analysis and supply chain security. He has identified and responsibly disclosed multiple vulnerabilities in open-source packages. His research work has contributed to improving security practices in the software supply chain ecosystem.',
             linkedin: 'https://linkedin.com/in/kartik00013/',
@@ -34,7 +34,7 @@ const extractSpeakers = () => {
             photo: 'static/media/team/ravindra.jpeg'
         },
        
-        'Hare Krishna': {
+        'Hare Krishna Rai': {
             role: 'Product Security Engineer @ HighRadius',
             bio: 'Hare Krishna is a DevSecOps practitioner with expertise in building secure CI/CD pipelines. He focuses on integrating security controls into the development process and automating security testing. His work has helped organizations achieve better security without compromising development velocity.',
             linkedin: 'https://linkedin.com/in/harekrishnarai',
