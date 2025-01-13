@@ -88,7 +88,7 @@ const scheduleData = [
             },
             { 
                 time: '11:15 AM - 12:45 PM', 
-                title: 'M.D.A.V.I (Missing Dependency Attack Vector Identification)', 
+                title: 'Broken Chains: Unveiling Hidden Attack Surface in Package Managers', 
                 speaker: {
                     name: 'Kartik Singh',
                     photo: 'static/media/team/kartik_singh.jpeg',
