@@ -36,7 +36,7 @@ const extractSpeakers = () => {
        
         'Hare Krishna Rai': {
             role: 'Product Security Engineer @ HighRadius',
-            bio: 'Hare Krishna is a DevSecOps practitioner with expertise in building secure CI/CD pipelines. He focuses on integrating security controls into the development process and automating security testing. His work has helped organizations achieve better security without compromising development velocity.',
+            bio: 'Hare Krishna Rai is a product security engineer and security researcher specializing in software supply chain security. With expertise in code review, penetration testing, and secure coding, he focuses on integrating advanced security measures into development workflows. His efforts ensure robust protection of the software ecosystem while maintaining innovation and delivery speed. Through his work, Hare empowers organizations to proactively defend against evolving threats in the software development lifecycle.',
             linkedin: 'https://linkedin.com/in/harekrishnarai',
             photo: 'static/media/team/Hare_Krishna_Rai.jpg'
         }
