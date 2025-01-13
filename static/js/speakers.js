@@ -152,31 +152,40 @@ document.addEventListener('DOMContentLoaded', () => {
     // Show speaker details in modal
     function showSpeakerDetails(speaker) {
         modalContent.innerHTML = `
-            <div class="modal-header">
-                <div class="flex items-center gap-4">
+            <div class="modal-container">
+                <!-- Profile Section -->
+                <div class="speaker-profile">
                     <img src="${speaker.photo}" 
                          alt="${speaker.name}" 
-                         class="w-20 h-20 rounded-full border-2 border-yellow-400"
+                         class="modal-speaker-image"
                          onerror="this.src='static/media/team/default-avatar.png'">
-                    <div>
-                        <h2 class="text-2xl font-bold text-white">${speaker.name}</h2>
-                        <p class="text-gray-400">${speaker.role || 'Speaker'}</p>
+                    <div class="modal-speaker-info">
+                        <h2 class="modal-speaker-name">${speaker.name}</h2>
+                        <p class="modal-speaker-role">${speaker.role || 'Speaker'}</p>
                     </div>
                 </div>
-                <p class="text-gray-300 mt-4">${speaker.bio}</p>
-            </div>
-            <div class="mt-8">
-                <h3 class="text-xl font-bold text-yellow-400 mb-4">Sessions</h3>
-                ${speaker.sessions.map(session => `
-                    <div class="bg-gray-800/50 rounded-lg p-4 mb-4">
-                        <div class="flex justify-between items-start mb-2">
-                            <h4 class="text-lg font-semibold text-white">${session.title}</h4>
-                            <span class="text-yellow-400 text-sm">${session.duration}</span>
-                        </div>
-                        <p class="text-gray-400 text-sm mb-2">${session.time}</p>
-                        <p class="text-gray-300">${session.description}</p>
+                
+                <!-- Bio Section - Now clearly separated -->
+                <div class="modal-bio-container">
+                    <div class="modal-bio">
+                        <p class="modal-bio-text">${speaker.bio}</p>
                     </div>
-                `).join('')}
+                </div>
+
+                <!-- Sessions Section -->
+                <div class="modal-sessions">
+                    <h3 class="sessions-title">Sessions</h3>
+                    ${speaker.sessions.map(session => `
+                        <div class="session-card">
+                            <div class="session-header">
+                                <h4 class="session-title">${session.title}</h4>
+                                <span class="session-duration">${session.duration}</span>
+                            </div>
+                            <p class="session-time">${session.time}</p>
+                            <p class="session-description">${session.description}</p>
+                        </div>
+                    `).join('')}
+                </div>
             </div>
         `;
         modal.classList.remove('hidden');
