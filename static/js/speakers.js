@@ -28,7 +28,7 @@ const extractSpeakers = () => {
             photo: 'static/media/team/nikhil_sahoo.jpeg'
         },
         'Ravindra': {
-            role: 'Security Researcher',
+            role: 'Security Engineer II @ Microsoft',
             bio: 'Ravindra specializes in application security with a focus on static analysis and vulnerability research. He has contributed to multiple open-source security tools and regularly speaks at security conferences about SAST implementation strategies.',
             linkedin: 'https://www.linkedin.com/in/ravindrapenumarthi/',
             photo: 'static/media/team/ravindra.jpeg'
