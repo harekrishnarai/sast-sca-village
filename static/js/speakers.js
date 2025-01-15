@@ -15,11 +15,11 @@ const extractSpeakers = () => {
             linkedin: 'https://linkedin.com/in/kartik00013/',
             photo: 'static/media/team/kartik_singh.jpeg'
         },
-        'Gaurav Bhosale': {
-            role: 'Application Security Engineer ',
-            bio: 'Gaurav Bhosale brings extensive experience in application security and CI/CD pipeline security. He specializes in building and securing deployment pipelines, implementing security controls, and conducting security assessments of cloud infrastructure.',
-            linkedin: 'https://www.linkedin.com/in/gauravbhosale1/',
-            photo: 'static/media/team/Gaurav_Bhosale.jpeg'
+        'Hare Krishna Rai': {
+            role: 'Product Security Engineer @ HighRadius',
+            bio: 'Hare Krishna Rai brings extensive experience in application security and CI/CD pipeline security. He specializes in building and securing deployment pipelines, implementing security controls, and conducting security assessments of cloud infrastructure.',
+            linkedin: 'https://www.linkedin.com/in/harekrishnarai/',
+            photo: 'static/media/team/Hare_Krishna_Rai.jpeg'
         },
         'Nikhil Sahoo': {
             role: 'Security Engineer II @ Microsoft',

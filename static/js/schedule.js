@@ -115,13 +115,13 @@ const scheduleData = [
             },
             { 
                 time: '1:30 PM - 2:30 PM', 
-                title: 'Attacking and Defending CI/CD Pipelines: A Hands-on Workshop', 
+                title: 'Attacking and Defending CI/CD Pipelines', 
                 speaker: {
-                    name: 'Gaurav Bhosale',
-                    photo: 'static/media/team/Gaurav_Bhosale.jpeg',
-                    bio: 'Gaurav Bhosale brings extensive experience in application security and CI/CD pipeline security. He specializes in building and securing deployment pipelines, implementing security controls, and conducting security assessments of cloud infrastructure.',
-                    linkedin: 'https://www.linkedin.com/in/gauravbhosale1/',
-                    role: 'Application Security Engineer'
+                    name: 'Hare Krishna Rai',
+                    photo: 'static/media/team/Hare_Krishna_Rai.jpeg',
+                    bio: 'Hare Krishna Rai brings extensive experience in application security and CI/CD pipeline security. He specializes in building and securing deployment pipelines, implementing security controls, and conducting security assessments of cloud infrastructure.',
+                    linkedin: 'https://www.linkedin.com/in/harekrishnarai/',
+                    role: 'Product Security Engineer @ HighRadius'
                 },
                 duration: '1 hour',
                 details: {
