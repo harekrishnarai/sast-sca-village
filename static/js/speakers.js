@@ -19,7 +19,7 @@ const extractSpeakers = () => {
             role: 'Product Security Engineer @ HighRadius',
             bio: 'Hare Krishna Rai brings extensive experience in application security and CI/CD pipeline security. He specializes in building and securing deployment pipelines, implementing security controls, and conducting security assessments of cloud infrastructure.',
             linkedin: 'https://www.linkedin.com/in/harekrishnarai/',
-            photo: 'static/media/team/Hare_Krishna_Rai.jpeg'
+            photo: 'static/media/team/Hare_Krishna_Rai.jpg'
         },
         'Nikhil Sahoo': {
             role: 'Security Engineer II @ Microsoft',

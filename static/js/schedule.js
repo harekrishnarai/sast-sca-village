@@ -118,7 +118,7 @@ const scheduleData = [
                 title: 'Attacking and Defending CI/CD Pipelines', 
                 speaker: {
                     name: 'Hare Krishna Rai',
-                    photo: 'static/media/team/Hare_Krishna_Rai.jpeg',
+                    photo: 'static/media/team/Hare_Krishna_Rai.jpg',
                     bio: 'Hare Krishna Rai brings extensive experience in application security and CI/CD pipeline security. He specializes in building and securing deployment pipelines, implementing security controls, and conducting security assessments of cloud infrastructure.',
                     linkedin: 'https://www.linkedin.com/in/harekrishnarai/',
                     role: 'Product Security Engineer @ HighRadius'
