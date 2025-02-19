@@ -22,6 +22,18 @@ const teamMembers = [
             linkedin:"gauravjoshii",
             github: "gauravjoshii"
         }
+    },
+    {
+        name: "Sagnik Haldar",
+        handle: "sagnikhaldar",
+        role: "Volunteer & Security Researcher",
+        image: "static/media/team/Sagnik_Haldar.jpeg",
+        tags: ["Pentesting", "Web Security", "API Security", "Cloud Security"],
+        social: {
+            twitter: "hsagnik",
+            linkedin: "hsagnik",
+            github: "hsagnik"
+        }
     }
 ];
 
