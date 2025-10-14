@@ -1,0 +1,436 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-heading: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  html {
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+    font-feature-settings: "ss01", "ss02", "ss03", "ss04";
+  }
+}
+
+@keyframes scanner {
+  0%, 100% {
+    background-position: -200% 0;
+  }
+  50% {
+    background-position: 200% 0;
+  }
+}
+
+.nav-link-hover {
+  position: relative;
+  isolation: isolate;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.nav-link-hover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  padding: 1px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    hsl(var(--accent)), 
+    transparent
+  );
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.nav-link-hover::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  background: linear-gradient(90deg,
+    transparent,
+    hsl(var(--accent)),
+    transparent
+  );
+  background-size: 200% 100%;
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: -1;
+}
+
+.nav-link-hover:hover {
+  box-shadow: 0 0 30px hsla(var(--accent) / 0.2);
+}
+
+.nav-link-hover:hover::before {
+  opacity: 1;
+}
+
+.nav-link-hover:hover::after {
+  opacity: 0.1;
+  animation: scanner 2s linear infinite;
+}
+
+@layer utilities {
+  .animate-flicker {
+    animation: flicker 8s ease-in-out infinite;
+  }
+}
+
+@keyframes flicker {
+  0%, 100% { 
+    background-color: #1a1832;
+  }
+  50% { 
+    background-color: #15122a;
+  }
+}
+
+@keyframes binaryRain {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(50%);
+  }
+}
+
+@keyframes circuitPulse {
+  0%, 100% {
+    opacity: 0.1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.2;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes dataFlow {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+@keyframes gridMove {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(50px);
+  }
+}
+
+@keyframes orbFloat {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(10px, -10px);
+  }
+}
+
+/* Village Community Event Design System - Hacktoberfest Theme
+Dark navy/purple background with white text and minimal design
+*/
+
+@layer base {
+  :root {
+    /* Hacktoberfest dark navy theme */
+    --background: 240 44% 15%; /* Deep navy purple #1e1b38 */
+    --foreground: 0 0% 100%; /* Pure white text */
+
+    /* Card system - slightly lighter navy */
+    --card: 240 44% 18%; /* Slightly lighter navy for cards */
+    --card-foreground: 0 0% 100%;
+
+    /* Interactive elements */
+    --popover: 240 44% 18%;
+    --popover-foreground: 0 0% 100%;
+
+    /* Brand colors - white primary for dark theme */
+    --primary: 0 0% 100%; /* White primary */
+    --primary-foreground: 240 44% 15%; /* Navy text on white */
+
+    /* Purple accent colors */
+    --accent: 260 60% 65%; /* Purple accent #9333EA equivalent */
+    --accent-foreground: 0 0% 100%;
+    --accent-hover: 260 70% 70%; /* Lighter purple hover */
+
+    /* Secondary system - subtle navy variations */
+    --secondary: 240 35% 22%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Muted tones - lighter navy */
+    --muted: 240 35% 25%;
+    --muted-foreground: 240 15% 75%; /* Light grayish text */
+
+    /* System colors */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Borders and inputs - subtle navy */
+    --border: 240 30% 30%;
+    --input: 240 30% 30%;
+    --ring: 260 60% 65%; /* Purple focus rings */
+
+    /* Hacktoberfest-specific gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(260 60% 65%), hsl(280 70% 70%));
+    --gradient-soft: linear-gradient(180deg, hsl(240 44% 15%), hsl(240 44% 18%));
+    
+    /* Minimal shadows for dark theme */
+    --shadow-soft: 0 8px 24px hsl(0 0% 0% / 0.3);
+    --shadow-card: 0 4px 16px hsl(0 0% 0% / 0.25);
+    --shadow-card-hover: 0 8px 32px hsl(0 0% 0% / 0.4);
+
+    /* Smooth transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 240 44% 12%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 260 60% 65%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 35% 20%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 240 30% 25%;
+    --sidebar-ring: 260 60% 65%;
+  }
+
+  .dark {
+    /* Keep same theme in dark mode for consistency */
+    --background: 240 44% 12%; /* Even darker navy */
+    --foreground: 0 0% 100%;
+
+    --card: 240 44% 15%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 240 44% 15%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 0 0% 100%;
+    --primary-foreground: 240 44% 12%;
+
+    --secondary: 240 35% 18%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 240 35% 20%;
+    --muted-foreground: 240 15% 70%;
+
+    --accent: 260 60% 65%;
+    --accent-foreground: 0 0% 100%;
+    --accent-hover: 260 70% 70%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 30% 25%;
+    --input: 240 30% 25%;
+    --ring: 260 60% 65%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(260 60% 65%), hsl(280 70% 70%));
+    --gradient-soft: linear-gradient(180deg, hsl(240 44% 12%), hsl(240 44% 15%));
+    
+    --shadow-soft: 0 8px 24px hsl(0 0% 0% / 0.4);
+    --shadow-card: 0 4px 16px hsl(0 0% 0% / 0.3);
+    --shadow-card-hover: 0 8px 32px hsl(0 0% 0% / 0.5);
+
+    --sidebar-background: 240 44% 10%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 260 60% 65%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 35% 15%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 240 30% 20%;
+    --sidebar-ring: 260 60% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    min-height: 100vh;
+    animation: subtleFlicker 8s infinite;
+  }
+}
+
+/* Tech Background Patterns */
+.tech-grid {
+  background-image: 
+    linear-gradient(to right, hsla(var(--accent) / 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, hsla(var(--accent) / 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: gridMove 20s linear infinite;
+}
+
+.tech-dots {
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    hsla(var(--accent) / 0.15) 1px,
+    transparent 0
+  );
+  background-size: 20px 20px;
+  mask-image: linear-gradient(to bottom, 
+    transparent, 
+    black 20%, 
+    black 80%, 
+    transparent
+  );
+  animation: dotsFloat 15s ease-in-out infinite;
+}
+
+.tech-orbs {
+  overflow: hidden;
+  opacity: 0.5;
+}
+
+/* Binary rain effect */
+.tech-binary {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+    transparent,
+    hsla(var(--accent) / 0.05)
+  );
+  mask-image: repeating-linear-gradient(0deg,
+    transparent 0%,
+    #000 1%,
+    #000 2%,
+    transparent 3%
+  );
+  animation: binaryRain 20s linear infinite;
+  opacity: 0.3;
+}
+
+/* Circuit lines */
+.tech-circuits {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    repeating-linear-gradient(45deg,
+      hsla(var(--accent) / 0.1) 0px,
+      hsla(var(--accent) / 0.1) 1px,
+      transparent 1px,
+      transparent 15px
+    ),
+    repeating-linear-gradient(-45deg,
+      hsla(var(--accent) / 0.1) 0px,
+      hsla(var(--accent) / 0.1) 1px,
+      transparent 1px,
+      transparent 15px
+    );
+  animation: circuitPulse 8s ease-in-out infinite;
+}
+
+/* Data flow */
+.tech-data-flow {
+  position: absolute;
+  inset: 0;
+  background: 
+    repeating-linear-gradient(90deg,
+      hsla(var(--accent) / 0.1),
+      hsla(var(--accent) / 0.1) 1px,
+      transparent 1px,
+      transparent 30px
+    );
+  background-size: 200% 100%;
+  animation: dataFlow 15s linear infinite;
+  opacity: 0.2;
+}
+
+.tech-orbs::before {
+  content: '';
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top: 25%;
+  left: 15%;
+  background: radial-gradient(
+    circle at center,
+    hsla(var(--accent) / 0.3),
+    transparent 70%
+  );
+  border-radius: 50%;
+  filter: blur(20px);
+  animation: orbFloat 8s ease-in-out infinite;
+}
+
+.tech-orbs::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 25%;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(
+    circle at center,
+    hsla(var(--accent) / 0.2),
+    transparent 70%
+  );
+  border-radius: 50%;
+  filter: blur(15px);
+  animation: orbFloat 12s ease-in-out infinite reverse;
+}
+
+@keyframes gridMove {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(50px);
+  }
+}
+
+@keyframes dotsFloat {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.15;
+  }
+  50% {
+    transform: translateY(-20px) scale(1.05);
+    opacity: 0.3;
+  }
+}
+
+@keyframes orbFloat {
+  0%, 100% {
+    transform: translate(0, 0);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translate(-30px, -30px);
+    opacity: 0.4;
+  }
+}

@@ -1,183 +1,52 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Favicon links -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="static/media/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="static/media/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="static/media/favicon/favicon-16x16.png">
-    
-    <!-- Terminal preloader resources removed -->
-    
-    <!-- Other resources -->
-    <link href="static/css/styles.css" rel="stylesheet">
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/sast-sca-cropped.png" />
     <title>SAST SCA Village</title>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JNLRLP5CH0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <meta name="description" content="Join Village.dev for three days of workshops, networking, and innovation in the San Francisco Bay Area. Connect with 500+ developers, designers, and tech enthusiasts." />
+    <meta name="author" content="SAST SCA Village" />
+    <meta name="keywords" content="developer event, tech community, San Francisco, workshops, networking, hackathon, programming" />
 
-  gtag('config', 'G-JNLRLP5CH0');
-</script>
+    <meta property="og:title" content="SAST SCA Village" />
+    <meta property="og:description" content="Join SAST SCA Village for three days of workshops, networking, and innovation. Feb 19-21, 2025 in ICG GOA." />
+    <meta property="og:type" content="event" />
+    <meta property="og:image" content="https://village.scagoat.dev" />
+    <meta property="og:url" content="https://village.scagoat.dev" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SAST SCA Village" />
+    <meta name="twitter:description" content="Three days of learning, building, and connecting with the developer community." />
+    <meta name="twitter:image" content="https://village.scagoat.dev" />
     
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-T6KRJRTF');</script>
-    <!-- End Google Tag Manager -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <script src="static/js/scripts.js" defer></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-</head>
-<body>
-    <nav x-data="{ open: false }" class="fixed top-0 w-full bg-black/90 backdrop-blur-md z-50 border-b border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="relative flex items-center justify-between h-16 md:h-24">
-                <div class="flex items-center">
-                    <a href="/" class="flex items-center space-x-2">
-                        <img src="static/media/favicon/android-chrome-512x512.png" 
-                             alt="AppSec Logo" 
-                             class="h-12 w-12 transition-transform hover:scale-105">
-                        <span class="hidden sm:block text-lg font-bold bg-gradient-to-r from-yellow-400 to-red-500 text-transparent bg-clip-text">
-                            SAST SCA Village
-                        </span>
-                    </a>
-                </div>
-
-                <div class="absolute inset-y-0 right-0 flex items-center md:hidden">
-                    <button type="button" 
-                            class="relative inline-flex items-center justify-center p-2 text-gray-400 hover:text-white"
-                            @click="open = !open"
-                            aria-controls="mobile-menu" 
-                            aria-expanded="false">
-                        <span class="sr-only">Open main menu</span>
-                        <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                        <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
-                </div>
-
-                <div class="hidden md:flex md:items-center md:space-x-8">
-                    <a href="team.html" class="text-white hover:text-yellow-400 transition-colors">Team</a>
-                    <a href="schedule.html" class="text-white hover:text-yellow-400 transition-colors">Schedule</a>
-                    <a href="navigation.html" class="text-white hover:text-yellow-400 transition-colors">Navigation</a>
-                    <a href="speakers.html" class="text-white hover:text-yellow-400 transition-colors">Speakers</a>
-                    <a href="swag.html" class="text-white hover:text-yellow-400 transition-colors">Swag</a>
-                    <a href="https://discord.gg/jNUHxbTYXP" target="_blank" class="text-white hover:text-yellow-400">
-                        <img src="static/media/discord.svg" alt="Discord" class="w-6 h-6">
-                    </a>
-                    <button id="theme-toggle" class="text-white hover:text-yellow-400 transition-transform hover:scale-110">
-                        <i class="fas fa-sun text-xl"></i>
-                    </button>
-                </div>
-            </div>
-
-            <div class="md:hidden" id="mobile-menu" x-show="open" 
-                 x-transition:enter="transition ease-out duration-100 transform"
-                 x-transition:enter-start="opacity-0 scale-95"
-                 x-transition:enter-end="opacity-100 scale-100"
-                 x-transition:leave="transition ease-in duration-75 transform"
-                 x-transition:leave-start="opacity-100 scale-100"
-                 x-transition:leave-end="opacity-0 scale-95">
-                <div class="px-2 pt-2 pb-3 space-y-1 bg-gray-900/95 backdrop-blur-md">
-                    <a href="team.html" class="block px-3 py-2 text-white hover:text-yellow-400">Team</a>
-                    <a href="schedule.html" class="block px-3 py-2 text-white hover:text-yellow-400">Schedule</a>
-                    <a href="navigation.html" class="block px-3 py-2 text-white hover:text-yellow-400">Navigation</a>
-                    <a href="speakers.html" class="block px-3 py-2 text-white hover:text-yellow-400">Speakers</a>
-                    <a href="swag.html" class="block px-3 py-2 text-white hover:text-yellow-400">Swag</a>
-                    <a href="https://discord.gg/jNUHxbTYXP" class="block px-3 py-2 text-white hover:text-yellow-400">Discord</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <div class="hero">
-        <div class="grid-overlay"></div>
-        <canvas id="particles" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1;"></canvas>
-        <div class="content">
-            <h1 class="hero-title glitch" data-text="SAST SCA Village">SAST SCA Village</h1>
-            <p style="font-size: 1rem; margin-bottom: 2rem; color: #808080;">Seasides Conference, International Center Goa | 20 - 22 Feb 2025</p>
-            <div class="spacer"></div>
-            <p style="color: #808080; text-align: justify;">Welcome to the Application Security Village! Dive deep into the world of SAST, SCA, and secure development practices. Join us for hands-on workshops, tool demonstrations, and expert-led sessions on finding and fixing vulnerabilities in your code. Whether you're a developer, security engineer, or AppSec enthusiast, there's something here for everyone!</p>
-            <div class="villages-grid">
-                <div class="village-card" data-village="sast">
-                    <i class="fas fa-search village-icon"></i>
-                    <h3 class="village-title">SAST Analysis</h3>
-                    <p>Master static analysis tools and techniques for finding code vulnerabilities.</p>
-                </div>
-                <div class="village-card" data-village="dependencies">
-                    <i class="fas fa-cube village-icon"></i>
-                    <h3 class="village-title">Dependency Scanning</h3>
-                    <p>Learn SCA tools and managing vulnerable dependencies effectively.</p>
-                </div>               
-                <div class="village-card" data-village="secure-coding">
-                    <i class="fas fa-code village-icon"></i>
-                    <h3 class="village-title">Defensive Coding</h3>
-                    <p>Learn defensive programming and secure development practices.</p>
-                </div>
-                <div class="village-card" data-village="devsecops">
-                    <i class="fas fa-infinity village-icon"></i>
-                    <h3 class="village-title">DevSecOps</h3>
-                    <p>Integrate security into your CI/CD pipeline and development workflow.</p>
-                </div>
-                <div class="village-card" data-village="supply-chain">
-                    <i class="fas fa-link village-icon"></i>
-                    <h3 class="village-title">Supply Chain Security</h3>
-                    <p>Protect your software supply chain from security threats.</p>
-                </div>
-                <div class="village-card" data-village="code-review">
-                    <i class="fas fa-code-branch village-icon"></i>
-                    <h3 class="village-title">Secure Code Review</h3>
-                    <p>Practice security-focused code review techniques and vulnerability hunting.</p>
-                </div>
-
-                
-            </div>
-            <div class="spacer"></div>
-                <div class="spacer"></div>
-                <div class="spacer"></div>
-                <p style="color: #808080; text-align: justify;">Passionate about sharing your skills? Join our team as a Volunteer or Trainer — fill out the Call for Volunteers form below to get started!</p>
-                <div class="button-group">
-                    <a href="mailto:hi@harekrishnarai.me" class="cta-button" target="_blank">Join Us</a>
-                    <a href="static/media/pdf/SeasidesSponsorship_2025.pdf" class="cta-button" target="_blank">Sponsor Us</a>
-                </div>
-        </div>
-        
-    </div>
-
-
+    <link rel="canonical" href="https://village.scagoat.dev" />
     
-
-    <footer class="site-footer">
-        <div class="footer-content">
-            <p>&copy; 2024 SAST SCA Village. All rights reserved.</p>
-        </div>
-    </footer>
-    <!-- Add particles.js library -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-
-    <!-- Add your particles container -->
-    <div id="particles-js" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;"></div>
-
-    <!-- Add scripts right before closing body tag -->
-    <!-- Scripts removed: terminal.js and preloader.js -->
-    <script>
-        console.log('Page starting to load scripts');
+    <!-- Structured Data for Event -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "SAST SCA Village",
+      "description": "Three days of workshops, networking, and innovation for developers and tech enthusiasts",
+      "startDate": "2024-10-15T09:00:00-07:00",
+      "endDate": "2024-10-17T16:00:00-07:00",
+      "location": {
+        "@type": "Place",
+        "name": "ICG GOA",
+        "address": "GOA"
+      },
+      "organizer": {
+        "@type": "Organization",
+        "name": "Village.dev",
+        "url": "https://village.scagoat.dev"
+      }
+    }
     </script>
-    <script>
-        console.log('All scripts loaded');
-    </script>
-</body>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
