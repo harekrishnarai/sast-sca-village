@@ -4,25 +4,33 @@ import Footer from "@/components/Footer";
 const Swag = () => {
   const swagLevels = [
     {
-      level: "Bronze Champion",
-      requirements: "Complete 2 Basic Challenges",
+      level: "SAST Master Sticker",
+      requirements: "Master static analysis security testing and earn this exclusive sticker!",
       items: [
         "SAST SCA Village T-Shirt",
         "Village Stickers Pack",
         "Digital Badge"
       ],
-      difficulty: "Beginner"
     },
     {
-      level: "Gold Expert",
-      requirements: "Complete 3 Advanced Challenges",
+      level: "SCA Champion Sticker",
+      requirements: "Become a software composition analysis expert and claim your badge!",
       items: [
         "Limited Edition Security Toolkit",
         "Exclusive Workshop Access",
         "Recognition on Village Wall",
         "All Bronze Rewards"
       ],
-      difficulty: "Advanced"
+    },
+    {
+      level: " DevSecOps Warrior Sticker",
+      requirements: "Complete the DevSecOps challenge track to unlock this special sticker!",
+      items: [
+        "Limited Edition Security Toolkit",
+        "Exclusive Workshop Access",
+        "Recognition on Village Wall",
+        "All Bronze Rewards"
+      ],
     }
     // Add more levels as needed
   ];
@@ -53,17 +61,13 @@ const Swag = () => {
             Village Rewards
           </h1>
           <p className="text-muted-foreground text-lg text-center max-w-3xl mx-auto mb-12">
-            Complete challenges, earn rewards! Each level offers unique swag and recognition 
-            for your achievements in the SAST SCA Village.
+            Complete challenges across our AppSec villages to earn exclusive swag! From SAST master badges to DevSecOps champion stickers, each item represents your achievement in mastering different aspects of application security.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {swagLevels.map((level) => (
               <div key={level.level} className="bg-card/50 backdrop-blur-sm p-6 rounded-lg border border-border hover:border-accent/50 transition-all">
                 <h3 className="text-xl font-bold text-center mb-2">{level.level}</h3>
-                <p className={`text-center mb-4 ${difficultyColors[level.difficulty]}`}>
-                  {level.difficulty}
-                </p>
                 <p className="text-sm text-accent font-medium text-center mb-4">
                   {level.requirements}
                 </p>

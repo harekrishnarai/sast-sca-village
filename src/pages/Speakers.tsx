@@ -1,39 +1,44 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { scheduleData } from "@/components/Schedule";
 import { GithubIcon, TwitterIcon, LinkedinIcon, ExternalLinkIcon, CalendarIcon, Clock3Icon } from "lucide-react";
 
 const Speakers = () => {
+  // Build a map from speaker identifier to their talks using scheduleData
+  const speakerTalksMap = (() => {
+    const map: Record<string, Array<{ title: string; description?: string; day: string; startTime: string; endTime: string; location: string }>> = {};
+    scheduleData.forEach((day) => {
+      day.events.forEach((event) => {
+        if (!event.speakers || event.type === "break" || event.type === "social") return;
+        event.speakers.forEach((sp) => {
+          const keyCandidates = new Set<string>();
+          if (sp.name) keyCandidates.add(sp.name.trim().toLowerCase());
+          if (sp.image) keyCandidates.add(sp.image.trim().toLowerCase());
+          keyCandidates.forEach((key) => {
+            if (!map[key]) map[key] = [];
+            map[key].push({
+              title: event.title,
+              description: event.description,
+              day: day.day,
+              startTime: event.startTime,
+              endTime: event.endTime,
+              location: event.location,
+            });
+          });
+        });
+      });
+    });
+    return map;
+  })();
+
   const speakers = [
     {
-      name: "Hare Krishna Rai",
-      alias: "0xblurr3d",
-      role: "Village Lead & Supply Chain Security Expert",
-      bio: "Security leader specializing in software supply chain security and secure development practices.",
-      image: "Hare_Krishna_Rai.jpg",
-      talk: {
-        title: "Understanding Software Supply Chain Security",
-        description: "Deep dive into modern software supply chain attacks, defense strategies, and best practices for securing your development pipeline.",
-        time: "10:00 AM",
-        duration: "45 min"
-      },
-      socials: {
-        twitter: "https://twitter.com/0xblurr3d",
-        github: "https://github.com/0xblurr3d",
-        linkedin: "https://linkedin.com/in/harekrishna"
-      }
-    },
-    {
       name: "Gaurav Joshi",
-      alias: "gauravjoshi",
-      role: "Village Co-Lead & Cloud Security Expert",
+      //alias: "gauravjoshi",
+      role: "Product Security Engineer @ Highradius",
       bio: "Cloud security expert focusing on secure cloud architecture and infrastructure security.",
       image: "Gaurav_Joshi.jpg",
-      talk: {
-        title: "Cloud Security in Modern Applications",
-        description: "Exploring cloud security challenges, infrastructure as code security, and implementing zero-trust architecture in cloud environments.",
-        time: "11:00 AM",
-        duration: "45 min"
-      },
+      imageKey: "Gaurav_Joshi.jpg",
       socials: {
         twitter: "https://twitter.com/gauravjoshi",
         github: "https://github.com/gauravjoshi",
@@ -41,21 +46,55 @@ const Speakers = () => {
       }
     },
     {
-      name: "Sagnik Haldar",
-      alias: "sagnikhaldar",
-      role: "Security Researcher",
+      name: "Kartik",
+      //alias: "kartik",
+      role: "Security Researcher II @ Microsoft",
       bio: "Security researcher with expertise in application security and vulnerability assessment.",
-      image: "Sagnik_Haldar.jpeg",
-      talk: {
-        title: "Advanced Application Security Testing",
-        description: "Hands-on exploration of modern SAST techniques, vulnerability assessment strategies, and securing modern web applications.",
-        time: "12:00 PM",
-        duration: "45 min"
-      },
+      image: "kartik_singh.jpeg",
+      imageKey: "kartik_singh.jpeg",
       socials: {
-        twitter: "https://twitter.com/hsagnik",
-        github: "https://github.com/hsagnik",
-        linkedin: "https://linkedin.com/in/hsagnik"
+        //twitter: "https://twitter.com/hsagnik",
+        //github: "https://github.com/hsagnik",
+        linkedin: "https://www.linkedin.com/in/kartik00013/"
+      }
+    },
+    {
+      name: "Hare Krishna Rai",
+      //alias: "0xblurr3d",
+      role: "Product Security Engineer @ Highradius",
+      bio: "Security leader specializing in software supply chain security and secure development practices.",
+      image: "Hare_Krishna_Rai.jpg",
+      imageKey: "Hare_Krishna_Rai.jpg",
+      socials: {
+        twitter: "https://twitter.com/0xblurr3d",
+        github: "https://github.com/0xblurr3d",
+        linkedin: "https://linkedin.com/in/harekrishna"
+      }
+    },
+    {
+      name: "Nikhil Sahoo",
+      //alias: "nikhilsahoo",
+      role: "Security Researcher II @ Microsoft",
+      bio: "Security researcher with expertise in application security and vulnerability assessment.",
+      image: "nikhil_sahoo.jpeg",
+      imageKey: "nikhil_sahoo.jpeg",
+      socials: {
+        //twitter: "https://twitter.com/hsagnik",
+        //github: "https://github.com/hsagnik",
+        linkedin: "https://www.linkedin.com/in/nikhil-sahoo-87204b106/"
+      }
+    },
+    {
+      name: "Ravindra Penumarthi",
+      //alias: "ravindrapenumarthi",
+      role: "Security Researcher II @ Microsoft",
+      bio: "Security researcher with expertise in application security and vulnerability assessment.",
+      image: "ravindra.jpeg",
+      imageKey: "ravindra.jpeg",
+      socials: {
+        //twitter: "https://twitter.com/hsagnik",
+        //github: "https://github.com/hsagnik",
+        linkedin: "https://www.linkedin.com/in/ravindrapenumarthi/"
       }
     }
   ];
@@ -86,7 +125,7 @@ const Speakers = () => {
           <div className="grid grid-cols-1 gap-8">
             {speakers.map((speaker) => (
               <div key={speaker.name} className="bg-card/50 backdrop-blur-sm rounded-lg border border-border hover:border-accent/50 transition-all group relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
                 
                 {/* Scanner Lines */}
                 <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -118,29 +157,52 @@ const Speakers = () => {
                   <div className="flex-1 space-y-4">
                     <div>
                       <h3 className="text-2xl font-bold mb-1 group-hover:text-accent transition-colors">{speaker.name}</h3>
-                      <p className="text-accent/80 font-mono text-sm">{speaker.alias}</p>
+                      {"alias" in speaker && (speaker as any).alias && (
+                        <p className="text-accent/80 font-mono text-sm">{(speaker as any).alias}</p>
+                      )}
                       <p className="text-accent font-medium mt-2">{speaker.role}</p>
                       <p className="text-muted-foreground mt-2">{speaker.bio}</p>
                     </div>
 
                     {/* Talk Details */}
-                    <div className="bg-background/50 rounded-lg p-4 border border-border">
-                      <h4 className="text-lg font-semibold flex items-center gap-2">
-                        <ExternalLinkIcon className="w-4 h-4" />
-                        {speaker.talk.title}
-                      </h4>
-                      <p className="text-muted-foreground mt-2">{speaker.talk.description}</p>
-                      <div className="flex items-center gap-4 mt-3 text-sm text-accent/80">
-                        <span className="flex items-center gap-1">
-                          <CalendarIcon className="w-4 h-4" />
-                          Day 1
-                        </span>
-                        <span className="flex items-center gap-1">
-                          <Clock3Icon className="w-4 h-4" />
-                          {speaker.talk.time} ({speaker.talk.duration})
-                        </span>
-                      </div>
-                    </div>
+                    {(() => {
+                      const keyName = speaker.name.trim().toLowerCase();
+                      const keyImage = (speaker as any).imageKey ? (speaker as any).imageKey.toLowerCase() : speaker.image.toLowerCase();
+                      const talks = speakerTalksMap[keyName] || speakerTalksMap[keyImage] || [];
+                      if (!talks.length) return null;
+                      return (
+                        <div className="bg-background/50 rounded-lg p-4 border border-border">
+                          <h4 className="text-lg font-semibold flex items-center gap-2">
+                            <ExternalLinkIcon className="w-4 h-4" />
+                            Talks
+                          </h4>
+                          <div className="mt-3 space-y-3">
+                            {talks.map((t, idx) => (
+                              <div key={idx} className="border-b last:border-b-0 pb-3 last:pb-0">
+                                <div className="font-medium">{t.title}</div>
+                                {t.description && (
+                                  <p className="text-muted-foreground mt-1">{t.description}</p>
+                                )}
+                                <div className="flex items-center gap-4 mt-2 text-sm text-accent/80">
+                                  <span className="flex items-center gap-1">
+                                    <CalendarIcon className="w-4 h-4" />
+                                    {t.day}
+                                  </span>
+                                  <span className="flex items-center gap-1">
+                                    <Clock3Icon className="w-4 h-4" />
+                                    {t.startTime} - {t.endTime}
+                                  </span>
+                                  <span className="flex items-center gap-1">
+                                    <ExternalLinkIcon className="w-4 h-4" />
+                                    {t.location}
+                                  </span>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      );
+                    })()}
 
                     {/* Social Links */}
                     <div className="flex gap-4">
