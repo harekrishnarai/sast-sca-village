@@ -1,3 +1,24 @@
+node_modules/
+dist/
+.env
+.DS_Store
+.vscode/
+.idea/
+*.log
+coverage/
+*.tmp
+*.swp
+*.bak
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.tsbuildinfo
+
+# Optional: Ignore build output directories
+build/
+out/
+
 bun.lockb
 node_modules
 dist
