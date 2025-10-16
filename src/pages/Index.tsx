@@ -47,7 +47,7 @@ const Index = () => {
   <section id="speakers" className="py-16 border-t border-border/50 bg-background/40 scroll-mt-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-10">
-              <h2 className="text-3xl font-bold">Featured Speakers</h2>
+              <h2 className="text-3xl font-bold">2025 SAST SCA Village Speakers</h2>
               <p className="text-muted-foreground mt-2">Industry experts sharing practical, vendor‑neutral techniques.</p>
             </div>
             <FeaturedSpeakers limit={6} />
@@ -56,7 +56,7 @@ const Index = () => {
                 href="/schedule"
                 className="inline-flex items-center gap-2 text-sm font-medium text-accent hover:text-accent/90 hover:underline underline-offset-4"
               >
-                View full schedule
+                View previous 2025 schedule
                 <span aria-hidden>→</span>
               </a>
             </div>
