@@ -75,7 +75,7 @@ const Index = () => {
                 Get Involved
               </h2>
               <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                Join us at SeaSides 2026 for cutting-edge security insights, networking, and collaboration.
+                Join us at Seasides 2026 for cutting-edge security insights, networking, and collaboration.
               </p>
             </div>
 
