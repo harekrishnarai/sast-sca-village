@@ -64,7 +64,7 @@ const Navigation = () => {
                   <span
                     className="ml-0.5 inline-flex items-center px-2 py-0.5 rounded-full border border-green-500/50 text-[10px] font-semibold text-green-400 bg-green-500/10 animate-pulse"
                   >
-                    Apply Now
+                    Open
                   </span>
                 )}
               </a>
