@@ -434,3 +434,55 @@ Dark navy/purple background with white text and minimal design
     opacity: 0.4;
   }
 }
+
+/* Countdown timer animations */
+@keyframes pageTear {
+  0% {
+    transform: translateY(0) rotateX(0deg);
+  }
+  50% {
+    transform: translateY(-5px) rotateX(-5deg);
+  }
+  100% {
+    transform: translateY(0) rotateX(0deg);
+  }
+}
+
+@keyframes cardFloat {
+  0%, 100% {
+    transform: translateY(0) rotateX(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotateX(2deg);
+  }
+}
+
+.countdown-card {
+  animation: cardFloat 6s ease-in-out infinite;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.countdown-card-compact {
+  animation: cardFloat 6s ease-in-out infinite;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.countdown-flip {
+  animation: flipNumber 0.6s ease-in-out;
+  transform-style: preserve-3d;
+}
+
+@keyframes flipNumber {
+  0% {
+    transform: rotateX(0deg);
+  }
+  50% {
+    transform: rotateX(90deg);
+    opacity: 0.5;
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}

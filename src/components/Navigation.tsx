@@ -3,6 +3,7 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { DiscordIcon } from "@/components/ui/icons/DiscordIcon";
+import { REGISTRATION_FORM_URL } from "@/lib/links";
 
 const DISCORD_URL = "https://discord.com/invite/jNUHxbTYXP";
 
@@ -23,55 +24,62 @@ const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Conference-style primary navigation (anchors point to sections on the home page)
   const navItems = [
-    { label: "Team", href: "/team" },
-    { label: "Schedule", href: "/schedule" },
-    { label: "Navigation", href: "/navigation" },
-    { label: "Speakers", href: "/speakers" },
-    { label: "Swag", href: "/swag" }
+    { label: "Agenda", href: "/#agenda" },
+    { label: "Speakers", href: "/#speakers" },
+    { label: "CFP", href: "/cfp" },
+    { label: "Sponsorship", href: "/#sponsorship" },
   ];
 
   return (
-    <nav className="sticky top-0 z-50 w-full px-4 py-6">
+    <nav className="sticky top-0 z-50 w-full px-4 py-4">
       <div className={cn(
-        "max-w-6xl mx-auto rounded-2xl backdrop-blur transition-all duration-300 py-2.5",
+        "max-w-6xl mx-auto rounded-2xl backdrop-blur transition-all duration-300 py-2",
         isScrolled 
-          ? "bg-black/20 shadow-lg" 
-          : "bg-black/10 shadow-soft"
+          ? "bg-background/70 border border-border/60 shadow-lg" 
+          : "bg-background/40 border border-border/40 shadow-soft"
       )}>
-        <div className="flex justify-between items-center px-4 py-3">
+        <div className="flex justify-between items-center px-4 py-2">
           {/* Logo */}
-          <a href="/" className="flex-shrink-0 flex items-center space-x-3 group transition-transform hover:scale-[1.02] duration-300">
-            <img src="/sast-sca-cropped.png" alt="SAST SCA Logo" className="h-9 w-auto" />
-            <h1 className="text-2xl font-bold text-primary tracking-tight">
-              <span className="font-heading text-accent group-hover:text-primary transition-colors duration-300">SAST SCA Village</span>
-            </h1>
+          <a href="/" className="flex-shrink-0 flex items-center gap-3 group">
+            <img src="/sast-sca-cropped.png" alt="SAST & SCA Village" className="h-9 w-auto rounded-sm" />
+            <span className="text-lg md:text-xl font-bold tracking-tight text-foreground">
+              <span className="font-heading text-accent group-hover:text-primary transition-colors">SAST & SCA Village</span>
+            </span>
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden md:flex items-center gap-1">
             {navItems.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
-                className="text-muted-foreground hover:text-primary transition-all font-medium nav-link-hover font-heading text-[15px] tracking-wide px-4 py-2.5"
+                className="text-muted-foreground hover:text-foreground transition-colors font-medium nav-link-hover font-heading text-[14px] tracking-wide px-3 py-2 rounded-lg"
               >
                 {item.label}
               </a>
             ))}
-            <a
-              href={DISCORD_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="ml-4"
-            >
-              <Button 
-                variant="ghost" 
-                className="hover:scale-105 transition-transform duration-300 p-2.5 h-11 w-11"
+            <div className="flex items-center gap-2 pl-2 ml-2 border-l border-border/50">
+              <a href={REGISTRATION_FORM_URL} target="_blank" rel="noopener noreferrer" className="hidden lg:inline-flex">
+                <Button className="bg-accent text-white hover:bg-accent/90">
+                  Register
+                </Button>
+              </a>
+              <a
+                href={DISCORD_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Join our Discord"
               >
-                <DiscordIcon />
-              </Button>
-            </a>
+                <Button 
+                  variant="ghost" 
+                  className="hover:scale-105 transition-transform duration-300 p-2.5 h-11 w-11"
+                >
+                  <DiscordIcon />
+                </Button>
+              </a>
+            </div>
           </div>
 
           {/* Mobile menu button */}
@@ -90,21 +98,24 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-4">
-            <div className="flex flex-col space-y-2">
+          <div className="md:hidden py-3 border-t border-border/50">
+            <div className="flex flex-col space-y-1">
               {navItems.map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
-                  className="text-muted-foreground hover:text-primary transition-colors font-medium nav-link-hover font-heading tracking-wide px-4 py-2 mx-2"
+                  className="text-muted-foreground hover:text-foreground transition-colors font-medium nav-link-hover font-heading tracking-wide px-4 py-2 mx-2 rounded-lg"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.label}
                 </a>
               ))}
-              <div className="pt-2 px-2">
+              <div className="pt-2 px-2 grid grid-cols-2 gap-2">
+                <a href={REGISTRATION_FORM_URL} target="_blank" rel="noopener noreferrer" onClick={() => setIsMenuOpen(false)}>
+                  <Button className="w-full bg-accent text-white hover:bg-accent/90">Register</Button>
+                </a>
                 <a
-                  href="https://discord.com/invite/jNUHxbTYXP"
+                  href={DISCORD_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block"
@@ -113,14 +124,8 @@ const Navigation = () => {
                     variant="ghost" 
                     className="w-full hover:scale-105 transition-transform duration-300 flex items-center justify-center gap-2"
                   >
-                    <svg
-                      className="w-6 h-6 text-accent hover:text-primary transition-colors"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                    >
-                      <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.182 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z"/>
-                    </svg>
+                    <DiscordIcon />
+                    Discord
                   </Button>
                 </a>
               </div>

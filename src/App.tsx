@@ -7,9 +7,10 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import SchedulePage from "./pages/Schedule";
 import Team from "./pages/Team";
-import VillageNavigation from "./pages/Navigation";
 import Speakers from "./pages/Speakers";
+import CFP from "./pages/CFP";
 import Swag from "./pages/Swag";
+import SpeakerDetail from "./pages/SpeakerDetail";
 
 const queryClient = new QueryClient();
 
@@ -23,9 +24,10 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/schedule" element={<SchedulePage />} />
           <Route path="/team" element={<Team />} />
-          <Route path="/navigation" element={<VillageNavigation />} />
           <Route path="/speakers" element={<Speakers />} />
+          <Route path="/speakers/:slug" element={<SpeakerDetail />} />
           <Route path="/swag" element={<Swag />} />
+          <Route path="/cfp" element={<CFP />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

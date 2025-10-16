@@ -23,6 +23,11 @@ interface Speaker {
   company: string;
   image: string;
   bio?: string;
+  socials?: {
+    twitter?: string;
+    github?: string;
+    linkedin?: string;
+  };
 }
 
 interface Event {
@@ -59,6 +64,11 @@ export const scheduleData: DaySchedule[] = [
             designation: "Product Security Engineer",
             company: "Highradius",
             image: "Gaurav_Joshi.jpg",
+            socials: {
+              linkedin: "https://www.linkedin.com/in/gauravjoshi1",
+              twitter: "https://twitter.com/gauravjoshi",
+              github: "https://github.com/gauravjoshi"
+            }
           },
         ],
         location: "Main Hall",
@@ -84,6 +94,11 @@ export const scheduleData: DaySchedule[] = [
             company: "Loginsoft",
             image: "kartik_singh.jpeg",
             bio: "",
+            socials: {
+              linkedin: "https://www.linkedin.com/in/kartiksingh",
+              twitter: "https://twitter.com/kartiksingh",
+              github: "https://github.com/kartiksingh"
+            }
           },
         ],
         location: "Auditorium",
@@ -117,6 +132,11 @@ export const scheduleData: DaySchedule[] = [
             company: "Highradius",
             image: "Hare_Krishna_Rai.jpg",
             bio: "",
+            socials: {
+              linkedin: "https://www.linkedin.com/in/harekrishnarai",
+              twitter: "https://twitter.com/harekrishnarai",
+              github: "https://github.com/harekrishnarai"
+            }
           },
         ],
         location: "Workshop Room A",
@@ -142,7 +162,11 @@ export const scheduleData: DaySchedule[] = [
             company: "Microsoft",
             image: "nikhil_sahoo.jpeg",
             bio: "",
-            
+            socials: {
+              linkedin: "https://www.linkedin.com/in/nikhilsahoo",
+              twitter: "https://twitter.com/nikhilsahoo",
+              github: "https://github.com/nikhilsahoo"
+            }
           },
           {
             name: "Ravindra Penumarthi",
@@ -150,7 +174,11 @@ export const scheduleData: DaySchedule[] = [
             company: "Microsoft",
             image: "ravindra.jpeg",
             bio: "",
-            
+            socials: {
+              linkedin: "https://www.linkedin.com/in/ravindrapenumarthi",
+              twitter: "https://twitter.com/ravindrapenumarthi",
+              github: "https://github.com/ravindrapenumarthi"
+            }
           },
         ],
         location: "Workshop Room A",
@@ -275,9 +303,10 @@ const getEventTypeColor = (type: string) => {
       return "bg-gradient-to-r from-blue-500/10 to-blue-500/5 text-blue-500";
     case "hackathon":
       return "bg-gradient-to-r from-purple-500/10 to-purple-500/5 text-purple-500";
-    case "break":
-    case "social":
-      return "bg-gradient-to-r from-emerald-100 to-green-50 text-emerald-700";
+      case "break":
+      case "social":
+        // Neutral/muted to match the site's theme for non-primary events
+        return "bg-gradient-to-r from-muted/10 to-muted/5 text-muted-foreground";
     case "awards":
       return "bg-gradient-to-r from-yellow-500/10 to-yellow-500/5 text-yellow-500";
     default:
