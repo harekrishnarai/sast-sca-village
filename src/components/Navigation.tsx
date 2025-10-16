@@ -28,7 +28,7 @@ const Navigation = () => {
   const navItems = [
     { label: "Home", href: "/" },
     { label: "Agenda", href: "/schedule" },
-    { label: "Speakers", href: "/#speakers" },
+    { label: "Speakers", href: "/speakers" },
     { label: "CFP", href: "/cfp" },
     { label: "Sponsor Us", href: SPONSORSHIP_BROCHURE_URL, external: true },
   ];
