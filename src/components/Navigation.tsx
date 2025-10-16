@@ -62,7 +62,7 @@ const Navigation = () => {
                 <span>{item.label}</span>
                 {item.label === "CFP" && (
                   <span
-                    className="ml-0.5 inline-flex items-center px-2 py-0.5 rounded-full border border-accent/30 text-[10px] font-semibold text-accent bg-[linear-gradient(90deg,rgba(0,0,0,0)_0%,rgba(255,255,255,0.15)_50%,rgba(0,0,0,0)_100%)] bg-[length:200%_100%] animate-shimmer animate-pulse"
+                    className="ml-0.5 inline-flex items-center px-2 py-0.5 rounded-full border border-green-500/50 text-[10px] font-semibold text-green-400 bg-green-500/10 animate-pulse"
                   >
                     Apply Now
                   </span>
@@ -132,7 +132,7 @@ const Navigation = () => {
                   <span>{item.label}</span>
                   {item.label === "CFP" && (
                     <span
-                      className="ml-0.5 inline-flex items-center px-2 py-0.5 rounded-full border border-accent/30 text-[10px] font-semibold text-accent bg-[linear-gradient(90deg,rgba(0,0,0,0)_0%,rgba(255,255,255,0.15)_50%,rgba(0,0,0,0)_100%)] bg-[length:200%_100%] animate-shimmer animate-pulse"
+                      className="ml-0.5 inline-flex items-center px-2 py-0.5 rounded-full border border-green-500/50 text-[10px] font-semibold text-green-400 bg-green-500/10 animate-pulse"
                     >
                       Apply Now
                     </span>
