@@ -3,7 +3,7 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { DiscordIcon } from "@/components/ui/icons/DiscordIcon";
-import { REGISTRATION_FORM_URL } from "@/lib/links";
+import { REGISTRATION_FORM_URL, SPONSORSHIP_BROCHURE_URL } from "@/lib/links";
 
 const DISCORD_URL = "https://discord.com/invite/jNUHxbTYXP";
 
@@ -29,7 +29,7 @@ const Navigation = () => {
     { label: "Agenda", href: "/#agenda" },
     { label: "Speakers", href: "/#speakers" },
     { label: "CFP", href: "/cfp" },
-    { label: "Sponsorship", href: "/#sponsorship" },
+    { label: "Sponsor Us", href: SPONSORSHIP_BROCHURE_URL, external: true },
   ];
 
   return (
@@ -55,6 +55,7 @@ const Navigation = () => {
               <a
                 key={item.label}
                 href={item.href}
+                {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                 className="text-muted-foreground hover:text-foreground transition-colors font-medium nav-link-hover font-heading text-[14px] tracking-wide px-3 py-2 rounded-lg"
               >
                 {item.label}
@@ -104,6 +105,7 @@ const Navigation = () => {
                 <a
                   key={item.label}
                   href={item.href}
+                  {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                   className="text-muted-foreground hover:text-foreground transition-colors font-medium nav-link-hover font-heading tracking-wide px-4 py-2 mx-2 rounded-lg"
                   onClick={() => setIsMenuOpen(false)}
                 >
