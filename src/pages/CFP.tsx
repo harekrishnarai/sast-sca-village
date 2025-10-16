@@ -16,13 +16,16 @@ export default function CFP() {
           <h1 className="text-5xl font-extrabold bg-gradient-to-r from-accent via-primary to-secondary bg-clip-text text-transparent drop-shadow-lg mb-4">
             Call for Papers 2026
           </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Share your expertise in SAST, SCA, supply chain security, and platform security. We welcome practical, vendor-neutral talks and hands-on demos.
-          </p>
         </header>
 
         {/* Submission Card */}
-        <section className="rounded-2xl border border-border/60 bg-card/60 backdrop-blur-lg shadow-xl p-8 flex flex-col items-center">
+  <section className="py-8 flex flex-col items-center">
+          {/* Condensed CFP Intro */}
+          <div className="text-lg text-muted-foreground w-full mb-8 text-center">
+            <p>
+              Seeking <span className="text-accent font-semibold">arsenal releases</span>, <span className="text-accent font-semibold">research</span>, and <span className="text-accent font-semibold">practical talks</span> on SAST, SCA, CI/CD Security, SSDLC, Product & Supply Chain Security. Vendor-neutral, hands-on, and tool-focused sessions welcome.
+            </p>
+          </div>
           <div className="flex items-center gap-3 mb-4">
             <svg className="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 17l-4 4m0 0l-4-4m4 4V3" />
