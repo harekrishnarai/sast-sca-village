@@ -26,6 +26,7 @@ const Navigation = () => {
 
   // Conference-style primary navigation (anchors point to sections on the home page)
   const navItems = [
+    { label: "Home", href: "/" },
     { label: "Agenda", href: "/schedule" },
     { label: "Speakers", href: "/#speakers" },
     { label: "CFP", href: "/cfp" },
