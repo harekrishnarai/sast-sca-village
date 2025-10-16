@@ -38,7 +38,7 @@ const Hero = () => {
                 Register Now
               </Button>
             </a>
-            <a href="/#agenda">
+            <a href="/schedule">
               <Button variant="outline" size="lg" className="hover:border-accent hover:text-accent">
                 View Agenda
               </Button>

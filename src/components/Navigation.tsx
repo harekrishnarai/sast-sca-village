@@ -3,7 +3,7 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { DiscordIcon } from "@/components/ui/icons/DiscordIcon";
-import { REGISTRATION_FORM_URL, SPONSORSHIP_BROCHURE_URL } from "@/lib/links";
+import { REGISTRATION_FORM_URL, SPONSORSHIP_BROCHURE_URL, ARCHIVE_2025_URL } from "@/lib/links";
 
 const DISCORD_URL = "https://discord.com/invite/jNUHxbTYXP";
 
@@ -26,7 +26,7 @@ const Navigation = () => {
 
   // Conference-style primary navigation (anchors point to sections on the home page)
   const navItems = [
-    { label: "Agenda", href: "/#agenda" },
+    { label: "Agenda", href: "/schedule" },
     { label: "Speakers", href: "/#speakers" },
     { label: "CFP", href: "/cfp" },
     { label: "Sponsor Us", href: SPONSORSHIP_BROCHURE_URL, external: true },
@@ -56,11 +56,30 @@ const Navigation = () => {
                 key={item.label}
                 href={item.href}
                 {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                className="text-muted-foreground hover:text-foreground transition-colors font-medium nav-link-hover font-heading text-[14px] tracking-wide px-3 py-2 rounded-lg"
+                className="text-muted-foreground hover:text-foreground transition-colors font-medium nav-link-hover font-heading text-[14px] tracking-wide px-3 py-2 rounded-lg inline-flex items-center gap-2"
               >
-                {item.label}
+                <span>{item.label}</span>
+                {item.label === "CFP" && (
+                  <span
+                    className="ml-0.5 inline-flex items-center px-2 py-0.5 rounded-full border border-accent/30 text-[10px] font-semibold text-accent bg-[linear-gradient(90deg,rgba(0,0,0,0)_0%,rgba(255,255,255,0.15)_50%,rgba(0,0,0,0)_100%)] bg-[length:200%_100%] animate-shimmer animate-pulse"
+                  >
+                    Apply Now
+                  </span>
+                )}
               </a>
             ))}
+            {/* Archive dropdown */}
+            <div className="relative group">
+              <button className="text-muted-foreground hover:text-foreground transition-colors font-medium nav-link-hover font-heading text-[14px] tracking-wide px-3 py-2 rounded-lg inline-flex items-center gap-2">
+                Archive
+                <svg className="w-4 h-4 opacity-70" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 011.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clipRule="evenodd"/></svg>
+              </button>
+              <div className="absolute right-0 mt-2 w-40 rounded-lg border border-border/50 bg-popover/90 backdrop-blur p-2 shadow-lg opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition">
+                <a href={ARCHIVE_2025_URL} target="_blank" rel="noopener noreferrer" className="block px-3 py-2 rounded-md text-sm text-muted-foreground hover:text-foreground hover:bg-accent/10">
+                  2025
+                </a>
+              </div>
+            </div>
             <div className="flex items-center gap-2 pl-2 ml-2 border-l border-border/50">
               <a href={REGISTRATION_FORM_URL} target="_blank" rel="noopener noreferrer" className="hidden lg:inline-flex">
                 <Button className="bg-accent text-white hover:bg-accent/90">
@@ -106,12 +125,28 @@ const Navigation = () => {
                   key={item.label}
                   href={item.href}
                   {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                  className="text-muted-foreground hover:text-foreground transition-colors font-medium nav-link-hover font-heading tracking-wide px-4 py-2 mx-2 rounded-lg"
+                  className="text-muted-foreground hover:text-foreground transition-colors font-medium nav-link-hover font-heading tracking-wide px-4 py-2 mx-2 rounded-lg inline-flex items-center gap-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  {item.label}
+                  <span>{item.label}</span>
+                  {item.label === "CFP" && (
+                    <span
+                      className="ml-0.5 inline-flex items-center px-2 py-0.5 rounded-full border border-accent/30 text-[10px] font-semibold text-accent bg-[linear-gradient(90deg,rgba(0,0,0,0)_0%,rgba(255,255,255,0.15)_50%,rgba(0,0,0,0)_100%)] bg-[length:200%_100%] animate-shimmer animate-pulse"
+                    >
+                      Apply Now
+                    </span>
+                  )}
                 </a>
               ))}
+              {/* Archive (mobile) */}
+              <div className="px-2 mt-2">
+                <div className="rounded-lg border border-border/50 overflow-hidden">
+                  <div className="px-4 py-2 text-xs uppercase tracking-wide text-muted-foreground bg-background/60">Archive</div>
+                  <a href={ARCHIVE_2025_URL} target="_blank" rel="noopener noreferrer" className="block px-4 py-3 text-sm text-muted-foreground hover:text-foreground hover:bg-accent/10">
+                    2025
+                  </a>
+                </div>
+              </div>
               <div className="pt-2 px-2 grid grid-cols-2 gap-2">
                 <a href={REGISTRATION_FORM_URL} target="_blank" rel="noopener noreferrer" onClick={() => setIsMenuOpen(false)}>
                   <Button className="w-full bg-accent text-white hover:bg-accent/90">Register</Button>

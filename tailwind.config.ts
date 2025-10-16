@@ -124,6 +124,10 @@ export default {
           "40%": { transform: "translate(-2px, -2px)" },
           "60%": { transform: "translate(2px, 2px)" },
           "80%": { transform: "translate(2px, -2px)" }
+        },
+        shimmer: {
+          "0%": { backgroundPosition: "0% 50%" },
+          "100%": { backgroundPosition: "100% 50%" }
         }
       },
       animation: {
@@ -134,7 +138,8 @@ export default {
         "scan-line": "scan-line 2s ease-in-out infinite",
         "scan-vertical": "scan-vertical 3s ease-in-out infinite",
         "scan-down": "scan-down 3s ease-in-out infinite",
-        "glitch": "glitch 0.5s ease-in-out infinite"
+        "glitch": "glitch 0.5s ease-in-out infinite",
+        shimmer: "shimmer 2s linear infinite"
       },
     },
   },
