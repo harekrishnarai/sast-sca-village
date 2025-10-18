@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import SchedulePage from "./pages/Schedule";
 import Team from "./pages/Team";
+import About from "./pages/About";
 import Speakers from "./pages/Speakers";
 import CFP from "./pages/CFP";
 import Swag from "./pages/Swag";
@@ -23,6 +24,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/schedule" element={<SchedulePage />} />
+          <Route path="/about" element={<About />} />
           <Route path="/team" element={<Team />} />
           <Route path="/speakers" element={<Speakers />} />
           <Route path="/speakers/:slug" element={<SpeakerDetail />} />

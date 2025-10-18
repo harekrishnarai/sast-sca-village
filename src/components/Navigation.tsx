@@ -33,6 +33,12 @@ const Navigation = () => {
     { label: "Sponsor Us", href: SPONSORSHIP_BROCHURE_URL, external: true },
   ];
 
+  const aboutDropdown = [
+    { label: "About Us", href: "/about" },
+    { label: "Team", href: "/team" },
+    { label: "2025 Archive", href: ARCHIVE_2025_URL, external: true },
+  ];
+
   return (
     <nav className="sticky top-0 z-50 w-full px-4 py-4">
       <div className={cn(
@@ -69,16 +75,25 @@ const Navigation = () => {
                 )}
               </a>
             ))}
-            {/* Archive dropdown */}
+            {/* About Us dropdown with Team and Archive */}
             <div className="relative group">
               <button className="text-muted-foreground hover:text-foreground transition-colors font-medium nav-link-hover font-heading text-[14px] tracking-wide px-3 py-2 rounded-lg inline-flex items-center gap-2">
-                Archive
+                About
                 <svg className="w-4 h-4 opacity-70" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 011.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clipRule="evenodd"/></svg>
               </button>
-              <div className="absolute right-0 mt-2 w-40 rounded-lg border border-border/50 bg-popover/90 backdrop-blur p-2 shadow-lg opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition">
-                <a href={ARCHIVE_2025_URL} target="_blank" rel="noopener noreferrer" className="block px-3 py-2 rounded-md text-sm text-muted-foreground hover:text-foreground hover:bg-accent/10">
-                  2025
-                </a>
+              <div className="absolute right-0 top-full pt-1 w-44 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto transition-opacity duration-150">
+                <div className="rounded-lg border border-border/50 bg-popover/90 backdrop-blur p-2 shadow-lg">
+                  {aboutDropdown.map((item) => (
+                    <a 
+                      key={item.label}
+                      href={item.href} 
+                      {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                      className="block px-3 py-2 rounded-md text-sm text-muted-foreground hover:text-foreground hover:bg-accent/10"
+                    >
+                      {item.label}
+                    </a>
+                  ))}
+                </div>
               </div>
             </div>
             <div className="flex items-center gap-2 pl-2 ml-2 border-l border-border/50">
@@ -139,13 +154,21 @@ const Navigation = () => {
                   )}
                 </a>
               ))}
-              {/* Archive (mobile) */}
+              {/* About dropdown (mobile) */}
               <div className="px-2 mt-2">
                 <div className="rounded-lg border border-border/50 overflow-hidden">
-                  <div className="px-4 py-2 text-xs uppercase tracking-wide text-muted-foreground bg-background/60">Archive</div>
-                  <a href={ARCHIVE_2025_URL} target="_blank" rel="noopener noreferrer" className="block px-4 py-3 text-sm text-muted-foreground hover:text-foreground hover:bg-accent/10">
-                    2025
-                  </a>
+                  <div className="px-4 py-2 text-xs uppercase tracking-wide text-muted-foreground bg-background/60">About</div>
+                  {aboutDropdown.map((item) => (
+                    <a 
+                      key={item.label}
+                      href={item.href} 
+                      {...(item.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                      className="block px-4 py-3 text-sm text-muted-foreground hover:text-foreground hover:bg-accent/10"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {item.label}
+                    </a>
+                  ))}
                 </div>
               </div>
               <div className="pt-2 px-2 grid grid-cols-2 gap-2">
