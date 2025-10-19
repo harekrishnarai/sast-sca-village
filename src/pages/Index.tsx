@@ -134,6 +134,70 @@ const Index = () => {
             </div>
           </div>
         </section>
+
+        {/* Venue Map Section */}
+        <section className="py-20 border-t border-border/50 bg-gradient-to-br from-background/60 via-background/50 to-background/40 relative overflow-hidden">
+          {/* Decorative elements */}
+          <div className="absolute top-0 right-1/4 w-64 h-64 bg-accent/5 rounded-full filter blur-3xl"></div>
+          <div className="absolute bottom-0 left-1/4 w-64 h-64 bg-primary/5 rounded-full filter blur-3xl"></div>
+          
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold mb-3 bg-gradient-to-r from-accent via-primary to-secondary bg-clip-text text-transparent">
+                Find Us
+              </h2>
+              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+                Join us at the beautiful coastal venue where innovation meets the sea
+              </p>
+            </div>
+            
+            <div className="relative rounded-2xl overflow-hidden border-2 border-accent/20 shadow-2xl hover:shadow-accent/20 hover:border-accent/30 transition-all duration-300">
+              {/* Map container with aspect ratio */}
+              <div className="relative w-full h-[450px] md:h-[550px] lg:h-[650px]">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3844.789!2d73.8190312!3d15.4585566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbfc06b6a581441%3A0x4d1d5e0c7e5c5e5c!2sThe%20International%20Centre%20Goa!5e0!3m2!1sen!2sin!4v1634567890!5m2!1sen!2sin&markers=color:red%7C15.4585566,73.8190312"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Seasides Conference Venue - The International Centre Goa"
+                  className="w-full h-full grayscale-[20%] contrast-[1.1]"
+                ></iframe>
+              </div>
+              
+              {/* Venue info overlay */}
+              <div className="absolute bottom-6 left-6 right-6 bg-background/95 backdrop-blur-lg border-2 border-accent/30 rounded-xl p-5 md:p-7 shadow-2xl">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-accent/20 to-primary/20 flex items-center justify-center flex-shrink-0 border border-accent/30">
+                    <svg className="w-6 h-6 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                      <path fillRule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="font-bold text-xl mb-1.5 text-foreground">The International Centre Goa (ICG)</h3>
+                    <p className="text-muted-foreground text-sm mb-3 leading-relaxed">
+                      Dr. E Borges Road, Dona Paula, Goa – 403 004, India
+                    </p>
+                    <a 
+                      href="https://www.google.com/maps/dir//The+International+Centre+Goa/@15.4585566,73.8190312,17z"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-sm font-medium text-accent hover:text-accent/80 transition-colors group"
+                    >
+                      Get Directions
+                      <svg className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <Footer />
       </div>
     </div>
