@@ -40,6 +40,18 @@ const Team = () => {
         linkedin: "https://linkedin.com/in/hsagnik",
       },
     },
+    {
+      name: "Rituraj Dubey",
+      alias: "0x07",
+      role: "Volunteer & Security Researcher",
+      bio: "Security researcher with expertise in application security and vulnerability assessment.",
+      image: "Rituraj_Dubey.jpg",
+      socials: {
+        twitter: "https://twitter.com/rituraj7dubey",
+        github: "https://github.com/rituraj-dubey",
+        linkedin: "https://linkedin.com/in/rituraj-dubey",
+      },
+    },
   ];
 
   return (
@@ -67,7 +79,7 @@ const Team = () => {
             master application security.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {teamMembers.map((member) => (
               <div
                 key={member.name}
