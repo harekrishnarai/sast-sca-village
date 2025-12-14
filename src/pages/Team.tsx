@@ -42,10 +42,10 @@ const Team = () => {
     },
     {
       name: "Rituraj Dubey",
-      alias: "0x07",
+      alias: "frosty",
       role: "Volunteer & Security Researcher",
       bio: "Security researcher with expertise in application security and vulnerability assessment.",
-      image: "Rituraj_Dubey.jpg",
+      image: "Rituraj_Dubey.jpeg",
       socials: {
         twitter: "https://twitter.com/rituraj7dubey",
         github: "https://github.com/rituraj-dubey",
